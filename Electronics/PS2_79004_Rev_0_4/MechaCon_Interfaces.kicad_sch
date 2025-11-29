@@ -3186,7 +3186,7 @@
   )
 
   (symbol (lib_id "PS2_Capacitors:C_15p_0402") (at 167.64 246.38 270) (mirror x) (unit 1)
-    (in_bom yes) (on_board yes) (dnp yes)
+    (in_bom no) (on_board yes) (dnp yes)
     (uuid 1223235d-3591-4fbc-a47d-411c3697273a)
     (property "Reference" "C1501" (at 168.91 245.11 90)
       (effects (font (size 1.27 1.27)) (justify left))
@@ -4827,7 +4827,7 @@
   )
 
   (symbol (lib_id "PS2_Capacitors:C_15p_0402") (at 167.64 256.54 270) (unit 1)
-    (in_bom yes) (on_board yes) (dnp yes)
+    (in_bom no) (on_board yes) (dnp yes)
     (uuid bf8343ed-8b6e-4a03-9c74-e8dd50ab15e2)
     (property "Reference" "C1502" (at 168.91 255.27 90)
       (effects (font (size 1.27 1.27)) (justify left))
