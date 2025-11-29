@@ -1,0 +1,1226 @@
+297484368574087
+PS2
+3-1734592-5
+
+
+0
+37
+37
+PS2
+3M_SD-RSMT-2-MQ-WF
+
+
+0
+13
+13
+PS2
+5-1734592-0
+
+
+0
+52
+52
+PS2
+90x90_bga_stencil
+
+
+0
+4
+1
+PS2
+5133TR_KEY
+
+5133TR 
+0
+5
+2
+PS2
+527460871
+
+
+0
+12
+10
+PS2
+0527461271
+
+
+0
+16
+14
+PS2
+5034800540_FFC
+
+
+0
+5
+5
+PS2
+AMPHENOL_12402012E212A
+
+
+0
+16
+16
+PS2
+AMPHENOL_GSD09002SEU
+
+
+0
+13
+13
+PS2
+BAT_1048
+
+
+0
+4
+4
+PS2
+BGA-48_8.0x9.0mm_Layout6x8_P0.8mm
+BGA-48 - pitch 0.8 mm
+BGA-48
+0
+48
+48
+PS2
+BGA-90_8.0x13.0mm_Layout2x3x15_P0.8mm
+BGA-90, http://www.issi.com/WW/pdf/42-45S32800J.pdf
+BGA-90
+0
+90
+90
+PS2
+BGA-169_14.0x14.0mm_Layout13x13_P1.0mm
+CXR726080
+CXR726080
+0
+164
+164
+PS2
+BGA-256_14.0x14.0mm_Layout16x16_P0.8mm_Ball0.45mm_Pad0.32mm_NSMD
+BGA-256, dimensions: https://www.xilinx.com/support/documentation/package_specs/ft256.pdf, design rules: https://www.xilinx.com/support/documentation/user_guides/ug1099-bga-device-design-rules.pdf
+BGA-256
+0
+256
+256
+PS2
+BQ25792RQMR
+
+
+0
+33
+29
+PS2
+BootRomModule_02
+
+
+0
+80
+80
+PS2
+BootRomModule_02_Outline
+
+
+0
+88
+81
+PS2
+CONN_62684402100ALF_AMP
+
+62684402100ALF 
+0
+44
+41
+PS2
+CONN_503398-1892_MOL
+
+5033981892 
+0
+14
+14
+PS2
+CONN_5050060812_MOL
+
+5054760810 
+0
+8
+8
+PS2
+CONN_5054760810_MOL
+
+5054760810 
+0
+12
+9
+PS2
+CON_5034800540_MOL
+
+5034800540 
+0
+7
+7
+PS2
+CON_5051100592_MOL
+
+5051100592 
+0
+7
+6
+PS2
+CP_EIA-3216-18_Kemet-A
+Tantalum Capacitor SMD Kemet-A (3216-18 Metric), IPC_7351 nominal, (Body size from: http://www.kemet.com/Lists/ProductCatalog/Attachments/253/KEM_TC101_STD.pdf), generated with kicad-footprint-generator
+capacitor tantalum
+0
+2
+2
+PS2
+CP_EIA-3528-21_Kemet-B
+Tantalum Capacitor SMD Kemet-B (3528-21 Metric), IPC_7351 nominal, (Body size from: http://www.kemet.com/Lists/ProductCatalog/Attachments/253/KEM_TC101_STD.pdf), generated with kicad-footprint-generator
+capacitor tantalum
+0
+2
+2
+PS2
+CP_Elec_3x5.4
+SMD capacitor, aluminum electrolytic, Nichicon, 3.0x5.4mm
+capacitor electrolytic
+0
+2
+2
+PS2
+CP_Elec_5x5.3
+SMD capacitor, aluminum electrolytic, Nichicon, 5.0x5.3mm
+capacitor electrolytic
+0
+2
+2
+PS2
+CSD17308Q3
+<b>8-SON</b> (Q3)<p>body 3.3 x 3.3 mm
+
+0
+5
+5
+PS2
+CUI_SJ-3524-SMT
+
+
+0
+4
+4
+PS2
+CUI_SJ-43504-SMT-TR
+
+
+0
+6
+6
+PS2
+CX90_632x232_HIR
+
+CX90MW6-16P 
+0
+22
+22
+PS2
+C_0201_0603Metric
+Capacitor SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator
+capacitor
+0
+4
+2
+PS2
+C_0402_1005Metric
+Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+capacitor
+0
+2
+2
+PS2
+C_0603_1608Metric
+Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+capacitor
+0
+2
+2
+PS2
+C_0805_2012Metric
+Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+capacitor
+0
+2
+2
+PS2
+C_1206_3216Metric
+Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+capacitor
+0
+2
+2
+PS2
+Crystal_SMD_2012-2Pin_2.0x1.2mm
+SMD Crystal 2012/2 http://txccrystal.com/images/pdf/9ht11.pdf, 2.0x1.2mm^2 package
+SMD SMT crystal
+0
+2
+2
+PS2
+Crystal_SMD_2016-4Pin_2.0x1.6mm
+SMD Crystal SERIES SMD2016/4 http://www.q-crystal.com/upload/5/2015552223166229.pdf, 2.0x1.6mm^2 package
+SMD SMT crystal
+0
+4
+4
+PS2
+Crystal_SMD_3225-4Pin_3.2x2.5mm
+SMD Crystal SERIES SMD3225/4 http://www.txccrystal.com/images/pdf/7m-accuracy.pdf, 3.2x2.5mm^2 package
+SMD SMT crystal
+0
+4
+4
+PS2
+Crystal_SMD_EuroQuartz_MQ2-2Pin_7.0x5.0mm
+SMD Crystal EuroQuartz MQ2 series http://cdn-reichelt.de/documents/datenblatt/B400/MQ.pdf, 7.0x5.0mm^2 package
+SMD SMT crystal
+0
+2
+2
+PS2
+Crystal_SMD_FOX_FE-2Pin_7.5x5.0mm
+crystal Ceramic Resin Sealed SMD http://www.foxonline.com/pdfs/fe.pdf, 7.5x5.0mm^2 package
+SMD SMT crystal
+0
+2
+2
+PS2
+Crystal_SMD_MicroCrystal_CM9V-T1A-2Pin_1.6x1.0mm
+SMD Crystal MicroCrystal CM9V-T1A series https://www.microcrystal.com/fileadmin/Media/Products/32kHz/Datasheet/CM9V-T1A.pdf, 1.6x1.0mm^2 package
+SMD SMT crystal
+0
+2
+2
+PS2
+Crystal_SMD_SeikoEpson_MC306-4Pin_8.0x3.2mm
+SMD Crystal Seiko Epson MC-306 https://support.epson.biz/td/api/doc_check.php?dl=brief_MC-306_en.pdf, 8.0x3.2mm^2 package
+SMD SMT crystal
+0
+4
+4
+PS2
+DF40C-10DP-0.4V51_HIR
+
+DF40C-10DP-0.4V51 
+0
+14
+14
+PS2
+DF40C-40DP-0.4V
+
+
+0
+44
+41
+PS2
+DF40C-40DS-0.4V
+
+
+0
+40
+40
+PS2
+DF40C2.0-50DS-0.4V51
+
+
+0
+50
+50
+PS2
+D_PowerDI-5
+PowerDI,Diode,Vishay,https://www.diodes.com/assets/Package-Files/PowerDI5.pdf
+PowerDI diode vishay
+0
+3
+2
+PS2
+EAST1616RGBB2_EVE
+
+EAST1616RGBB2 
+0
+4
+4
+PS2
+FPC_40Pin_0.5mm_Pitch
+
+
+0
+42
+41
+PS2
+FT2232H_mini_module_jtag
+
+
+0
+52
+52
+PS2
+FTSH-107-01-F-DV-K-P-TR
+surface-mounted straight pin header, 2x07, 1.27mm pitch, double rows
+Surface mounted pin header SMD 2x07 1.27mm double row
+0
+14
+14
+PS2
+Fiducial_1mm_Mask2mm
+Circular Fiducial, 1mm bare copper, 2mm soldermask opening (Level A)
+fiducial
+0
+1
+0
+PS2
+GCT_MEM2085-00-115-00-A_REV0.2
+
+
+0
+19
+19
+PS2
+GCT_USB4085-GF-A_REVA4
+
+
+0
+20
+17
+PS2
+HRS_CX70M-24P1
+
+
+0
+30
+30
+PS2
+HRS_DF40C-80DP-0.4V_51_
+
+
+0
+84
+81
+PS2
+IC_SN74AVC8T245RHLR
+
+
+0
+25
+25
+PS2
+IC_W25Q16JVUXIQ_TR
+
+
+0
+9
+9
+PS2
+INA3221AIRGVR
+
+
+0
+21
+18
+PS2
+IND_TAIYO_NRS4012_TAY
+
+NRS4012T4R7MDGJ 
+0
+2
+2
+PS2
+JST_BM03B-SRSS-TB_LF__SN_
+
+
+0
+5
+5
+PS2
+JST_PH_B2B-PH-K_1x02_P2.00mm_flat
+JST PH series connector, B2B-PH-K (http://www.jst-mfg.com/product/pdf/eng/ePH.pdf), generated with kicad-footprint-generator
+connector JST PH side entry
+0
+2
+2
+PS2
+JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical
+JST PH series connector, B3B-PH-K (http://www.jst-mfg.com/product/pdf/eng/ePH.pdf), generated with kicad-footprint-generator
+connector JST PH side entry
+0
+5
+5
+PS2
+JST_SH_BM03B-SRSS-TB_1x03-1MP_P1.00mm_Vertical
+JST SH series connector, BM03B-SRSS-TB (http://www.jst-mfg.com/product/pdf/eng/eSH.pdf), generated with kicad-footprint-generator
+connector JST SH side entry
+0
+5
+4
+PS2
+JST_SM03B-SRSS-TB(LF)(SN)
+
+
+0
+5
+5
+PS2
+JST_SUR_BM02B-SURS-TF_1x02-1MP_P0.80mm_Vertical
+JST SUR series connector, BM02B-SURS-TF (http://www.jst-mfg.com/product/pdf/eng/eSUR.pdf), generated with kicad-footprint-generator
+connector JST SUR side entry
+0
+4
+3
+PS2
+JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical
+JST XH series connector, B3B-XH-A (http://www.jst-mfg.com/product/pdf/eng/eXH.pdf), generated with kicad-footprint-generator
+connector JST XH vertical
+0
+3
+3
+PS2
+JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical
+JST XH series connector, B6B-XH-A (http://www.jst-mfg.com/product/pdf/eng/eXH.pdf), generated with kicad-footprint-generator
+connector JST XH vertical
+0
+6
+6
+PS2
+LED_Lite-ON_LTST-C155
+Kingbright, dual LED, 3.5 x 2.8 mm Surface Mount LED Lamp (http://www.kingbrightusa.com/images/catalog/SPEC/AAA3528ESGCT.pdf)
+dual led smd
+0
+4
+4
+PS2
+LQFP-48_7x7mm_P0.5mm
+LQFP, 48 Pin (https://www.analog.com/media/en/technical-documentation/data-sheets/ltc2358-16.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+LQFP QFP
+0
+48
+48
+PS2
+LQFP-100_14x14mm_P0.5mm
+LQFP, 100 Pin (https://www.nxp.com/docs/en/package-information/SOT407-1.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+LQFP QFP
+0
+100
+100
+PS2
+LQFP-208_28x28mm_P0.5mm
+LQFP, 208 Pin (https://www.nxp.com/docs/en/package-information/SOT459-1.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+LQFP QFP
+0
+208
+208
+PS2
+L_0805_2012Metric_Pad1.15x1.40mm_HandSolder
+Inductor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+inductor handsolder
+0
+2
+2
+PS2
+L_Coilcraft_XGL4020
+L_Coilcraft_XGL4020 https://www.coilcraft.com/pdfs/xfl4020.pdf
+L Coilcraft XGL4020
+0
+2
+2
+PS2
+L_TDK_SPM6530
+
+
+0
+2
+2
+PS2
+Logo
+
+
+0
+0
+0
+PS2
+MODULE_RP2040-ZERO
+
+
+0
+23
+23
+PS2
+MOLEX_48258-0001
+
+
+0
+8
+5
+PS2
+MOLEX_5037630691
+
+
+0
+8
+8
+PS2
+MOLEX_5054761010
+
+
+0
+14
+14
+PS2
+MOLEX_2082940020_2pin
+
+
+0
+4
+3
+PS2
+MOLEX_2082940040_4pin
+
+
+0
+6
+5
+PS2
+MPQ8626GD-Z
+
+
+0
+14
+14
+PS2
+Module_Footprint
+
+
+0
+108
+108
+PS2
+Mounting_Wuerth_WA-SMSI-M2_H3mm_9774030243
+Mounting Hardware, inside through hole M2, height 3, Wuerth electronics 9774030243 (https://katalog.we-online.de/em/datasheet/9774030243.pdf), generated with kicad-footprint-generator
+Mounting M2 9774030243
+0
+5
+1
+PS2
+Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm
+Miniature Crystal Clock Oscillator Abracon ASE series, http://www.abracon.com/Oscillators/ASEseries.pdf, 3.2x2.5mm^2 package
+SMD SMT crystal oscillator
+0
+4
+4
+PS2
+PS2_CXD2976GB_35.0x35.0mm_P1.0mm
+CXD2976GB
+CXD2976GB
+0
+768
+768
+PS2
+PS2_CXD2980CGB_23.0x23.0mm_P1.0mm
+CXD2980CGB
+CXD2980CGB
+0
+416
+416
+PS2
+PS2_CXD3098AQ_208_28x28mm_P0.5mm
+QFP, 208 Pin
+PQFP QFP CXD3098
+0
+208
+208
+PS2
+PS2_Controller_Socket_Vert_Female
+
+
+0
+10
+10
+PS2
+PS2_MemoryCard_Socket
+
+
+0
+8
+8
+PS2
+PS2_USB_mid_mount
+
+
+0
+8
+5
+PS2
+PWR_EVAL_CONN
+
+
+0
+16
+16
+PS2
+PWR_EVAL_CONN_2x2
+
+
+0
+4
+4
+PS2
+PWR_EVAL_CONN_2x08
+
+
+0
+16
+16
+PS2
+PWR_EVAL_CONN_2x12
+
+
+0
+24
+24
+PS2
+PinHeader_1x02_P2.54mm_Vertical
+Through hole straight pin header, 1x02, 2.54mm pitch, single row
+Through hole pin header THT 1x02 2.54mm single row
+0
+2
+2
+PS2
+PinHeader_1x07_P2.54mm_Vertical
+Through hole straight pin header, 1x07, 2.54mm pitch, single row
+Through hole pin header THT 1x07 2.54mm single row
+0
+7
+7
+PS2
+PinHeader_1x08_P2.54mm_Horizontal
+Through hole angled pin header, 1x08, 2.54mm pitch, 6mm pin length, single row
+Through hole angled pin header THT 1x08 2.54mm single row
+0
+8
+8
+PS2
+PinHeader_1x12_P1.27mm_Vertical
+Through hole straight pin header, 1x12, 1.27mm pitch, single row
+Through hole pin header THT 1x12 1.27mm single row
+0
+12
+12
+PS2
+PinHeader_2x43_P1.27mm_Vertical_SMD
+surface-mounted straight pin header, 2x43, 1.27mm pitch, double rows
+Surface mounted pin header SMD 2x43 1.27mm double row
+0
+86
+86
+PS2
+PowerPAK1212-8_VIS
+
+SI7223DN-T1-GE3 
+0
+10
+8
+PS2
+QFN-24_EP_4x4_Pitch0.5mm
+
+
+0
+28
+25
+PS2
+QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm
+QFN, 56 Pin (https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf#page=634), generated with kicad-footprint-generator ipc_noLead_generator.py
+QFN NoLead
+0
+61
+57
+PS2
+R_0402_1005Metric
+Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+resistor
+0
+2
+2
+PS2
+R_0603_1608Metric
+Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+resistor
+0
+2
+2
+PS2
+R_0805_2012Metric
+Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+resistor
+0
+2
+2
+PS2
+R_1206_3216Metric
+Resistor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+resistor
+0
+2
+2
+PS2
+R_Array_Convex_4x0402
+Chip Resistor Network, ROHM MNR04 (see mnr_g.pdf)
+resistor array
+0
+8
+8
+PS2
+R_Array_Convex_4x0603
+Chip Resistor Network, ROHM MNR14 (see mnr_g.pdf)
+resistor array
+0
+8
+8
+PS2
+SAMTEC_FTSH-105-01-F-DV-P-TR
+
+
+0
+10
+10
+PS2
+SAMTEC_FTSH-107-01-L-DV-K-A
+translated Allegro footprint
+
+0
+14
+14
+PS2
+SD_Pins
+
+
+0
+9
+9
+PS2
+SD_Stiffener
+
+
+0
+0
+0
+PS2
+SIC438BED-T1-GE3
+
+
+0
+28
+28
+PS2
+SO-8_3.9x4.9mm_P1.27mm
+SO, 8 Pin (https://www.nxp.com/docs/en/data-sheet/PCF8523.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SO SO
+0
+8
+8
+PS2
+SOD-923_0P6X0P85_ONS
+
+NSR0240P2T5G 
+0
+2
+2
+PS2
+SOT-23
+SOT-23, Standard
+SOT-23
+0
+3
+3
+PS2
+SOT-23-5
+SOT, 5 Pin (https://www.jedec.org/sites/default/files/docs/Mo-178c.PDF variant AA), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SOT TO_SOT_SMD
+0
+5
+5
+PS2
+SOT-23-6
+SOT, 6 Pin (https://www.jedec.org/sites/default/files/docs/Mo-178c.PDF variant AB), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SOT TO_SOT_SMD
+0
+6
+6
+PS2
+SOT-143
+SOT-143 https://www.nxp.com/docs/en/package-information/SOT143B.pdf
+SOT-143
+0
+4
+4
+PS2
+SOT-343_SC-70-4
+SOT-343, SC-70-4
+SOT-343 SC-70-4
+0
+4
+4
+PS2
+SOT-353_SC-70-5
+SOT-353, SC-70-5
+SOT-353 SC-70-5
+0
+5
+5
+PS2
+SOT-583
+SOT583
+SOT-583
+0
+8
+8
+PS2
+SPM5030T-1R0M
+
+
+0
+2
+2
+PS2
+SW_5134TR
+
+
+0
+5
+2
+PS2
+SW_KSC222J_LFS
+
+TL3301 Series Tact Switch
+0
+4
+2
+PS2
+SW_SPST_PTS645
+C&K Components SPST SMD PTS645 Series 6mm Tact Switch
+SPST Button Switch
+0
+6
+3
+PS2
+SW_SPST_TL3301
+
+TL3301 Series Tact Switch
+0
+4
+2
+PS2
+SW_SPST_TL3342
+Low-profile SMD Tactile Switch, https://www.e-switch.com/system/asset/product_line/data_sheet/165/TL3342.pdf
+SPST Tactile Switch
+0
+4
+2
+PS2
+SW_TL3315NF100Q
+
+
+0
+4
+2
+PS2
+SolderJumper-2_Open_Pad0.4x1.5mm
+SMD Solder Jumper, 0.4x1.5mm Pads, 0.2mm gap, open
+solder jumper open
+0
+2
+2
+PS2
+SolderJumper-2_Open_Pad0.45x0.15mm
+SMD Solder Jumper, 0.45x0.15mm Pads, 0.15mm gap, open
+solder jumper open
+0
+2
+2
+PS2
+Solder_Pad_127
+
+
+0
+19
+19
+PS2
+Solder_Point_127
+
+
+0
+1
+1
+PS2
+Solder_Point_big
+
+
+0
+7
+1
+PS2
+Solder_Point_big_nodrills
+
+
+0
+1
+1
+PS2
+TDFN-10-1EP_2x3mm_P0.5mm_EP0.9x2mm
+TDFN, 10 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0429.PDF), generated with kicad-footprint-generator ipc_noLead_generator.py
+TDFN NoLead
+0
+13
+11
+PS2
+TDFN-14-1EP_3x3mm_P0.4mm_EP1.78x2.35mm
+TDFN, 14 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0137.PDF (T1433-2C)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TDFN NoLead
+0
+19
+15
+PS2
+TESTPOINT
+
+
+0
+1
+1
+PS2
+TE_1551576-5
+
+
+0
+1
+1
+PS2
+TE_2328702-4
+
+
+0
+6
+6
+PS2
+TP_Jumper
+
+
+0
+2
+2
+PS2
+TQFN-24-1EP_4x4mm_P0.5mm_EP2.6x2.6mm
+https://pdfserv.maximintegrated.com/land_patterns/90-0022.PDF
+TQFN NoLead
+0
+29
+25
+PS2
+TRIM_PVG5A203C03R00
+
+
+0
+3
+3
+PS2
+TSOP-I-48_18.4x12mm_P0.5mm
+TSOP I, 32 pins, 18.4x8mm body (https://www.micron.com/~/media/documents/products/technical-note/nor-flash/tn1225_land_pad_design.pdf)
+TSOP I 32
+0
+48
+48
+PS2
+TSOP-II-44_10.16x18.41mm_P0.8mm
+TSOP-II, 44 Pin (http://www.issi.com/WW/pdf/61-64C5128AL.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSOP-II SO
+0
+40
+40
+PS2
+TSOP-II-50_21x10.16mm_P0.8mm
+54-lead TSOP typ II package
+TSOPII TSOP2
+0
+50
+50
+PS2
+TSOP-II-50_flex_PCB_footprint
+54-lead TSOP typ II package
+TSOPII TSOP2
+0
+50
+50
+PS2
+TSOP-II-50_flex_PCB_footprint_rigid
+54-lead TSOP typ II package
+TSOPII TSOP2
+0
+50
+50
+PS2
+TSOP48ZIF
+
+
+0
+50
+48
+PS2
+TSSOP-16_4.4x5mm_P0.65mm
+TSSOP, 16 Pin (JEDEC MO-153 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+16
+16
+PS2
+Testpoint_long
+
+
+0
+1
+1
+PS2
+Texas_USON-6_1x1.45mm_P0.5mm_SMD
+USON, 6 Pin (https://www.ti.com/lit/ds/symlink/sn74auc1g04.pdf#page=24), Solder Mask Defined
+USON NoLead DRY0006A
+0
+6
+6
+PS2
+Transformer_Ethernet_Wuerth_749013011A
+Ethernet Transformer, Wuerth 749013011A, https://www.we-online.com/katalog/datasheet/749013011A.pdf
+Ethernet Transformer
+0
+16
+16
+PS2
+TrionT20_eval_board
+
+
+0
+204
+162
+PS2
+USB_C_CONN_Amphenol_10137062-00021LF
+
+
+0
+28
+25
+PS2
+Video_Connector
+
+
+0
+16
+13
+PS2
+WQFN-32-1EP_5x5mm_P0.5mm_EP3.1x3.1mm
+QFN, 32-Leads, Body 5x5x0.8mm, Pitch 0.5mm, Thermal Pad 3.1x3.1mm; (see Texas Instruments LM25119 http://www.ti.com/lit/ds/symlink/lm25119.pdf)
+WQFN 0.5
+0
+37
+33
+PS2
+WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm
+WSON, 6 Pin (http://www.ti.com/lit/ds/symlink/tps61040.pdf#page=35), generated with kicad-footprint-generator ipc_noLead_generator.py
+WSON NoLead
+0
+9
+7
+PS2
+WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4.3mm
+WSON, 8 Pin (http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf (page 68)), generated with kicad-footprint-generator ipc_noLead_generator.py
+WSON NoLead
+0
+13
+9
+PS2
+X2QFN-10
+
+ADS7142IRUGR 
+0
+10
+10
+PS2
+X2SON-8_1.4x1mm_P0.35mm
+X2SON-8 1.4x1mm Pitch0.35mm http://www.ti.com/lit/ds/symlink/pca9306.pdf
+X2SON-8 1.4x1mm Pitch0.35mm
+0
+8
+8
+PS2
+bios_25pin_conn
+
+
+0
+75
+25
+PS2
+center_layer
+
+
+0
+0
+0
+PS2
+edelweiss2
+
+
+0
+0
+0
+PS2
+mounting_hole_1.6mm
+
+
+0
+1
+1
+PS2
+nettie_small
+
+
+0
+2
+2
+PS2
+rumble_dual_solder_pad
+
+
+0
+2
+2
+PS2
+solder_pad_rect_1x1.5
+
+
+0
+1
+1
+PS2
+test
+
+
+0
+0
+0
+PS2
+test2_top
+
+
+0
+0
+0
+PS2
+test_bot
+
+
+0
+0
+0

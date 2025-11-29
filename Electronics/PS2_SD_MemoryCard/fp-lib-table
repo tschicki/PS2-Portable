@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "Memory_Card")(type "KiCad")(uri "${KIPRJMOD}/Memory_Card.pretty")(options "")(descr ""))
+)

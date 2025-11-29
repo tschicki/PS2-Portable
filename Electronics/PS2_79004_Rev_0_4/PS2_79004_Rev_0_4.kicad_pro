@@ -1,0 +1,880 @@
+{
+  "board": {
+    "3dviewports": [],
+    "design_settings": {
+      "defaults": {
+        "board_outline_line_width": 0.09999999999999999,
+        "copper_line_width": 0.19999999999999998,
+        "copper_text_italic": false,
+        "copper_text_size_h": 1.5,
+        "copper_text_size_v": 1.5,
+        "copper_text_thickness": 0.3,
+        "copper_text_upright": false,
+        "courtyard_line_width": 0.049999999999999996,
+        "dimension_precision": 4,
+        "dimension_units": 2,
+        "dimensions": {
+          "arrow_length": 1270000,
+          "extension_offset": 500000,
+          "keep_text_aligned": true,
+          "suppress_zeroes": false,
+          "text_position": 0,
+          "units_format": 1
+        },
+        "fab_line_width": 0.09999999999999999,
+        "fab_text_italic": false,
+        "fab_text_size_h": 1.0,
+        "fab_text_size_v": 1.0,
+        "fab_text_thickness": 0.15,
+        "fab_text_upright": false,
+        "other_line_width": 0.15,
+        "other_text_italic": false,
+        "other_text_size_h": 1.0,
+        "other_text_size_v": 1.0,
+        "other_text_thickness": 0.15,
+        "other_text_upright": false,
+        "pads": {
+          "drill": 0.0,
+          "height": 0.25,
+          "width": 1.1
+        },
+        "silk_line_width": 0.15,
+        "silk_text_italic": false,
+        "silk_text_size_h": 1.0,
+        "silk_text_size_v": 1.0,
+        "silk_text_thickness": 0.15,
+        "silk_text_upright": false,
+        "zones": {
+          "45_degree_only": false,
+          "min_clearance": 0.15
+        }
+      },
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        },
+        {
+          "gap": 0.2,
+          "via_gap": 0.2,
+          "width": 0.125
+        }
+      ],
+      "drc_exclusions": [],
+      "meta": {
+        "version": 2
+      },
+      "rule_severities": {
+        "annular_width": "error",
+        "clearance": "error",
+        "connection_width": "warning",
+        "copper_edge_clearance": "error",
+        "copper_sliver": "warning",
+        "courtyards_overlap": "error",
+        "diff_pair_gap_out_of_range": "error",
+        "diff_pair_uncoupled_length_too_long": "error",
+        "drill_out_of_range": "error",
+        "duplicate_footprints": "warning",
+        "extra_footprint": "warning",
+        "footprint": "error",
+        "footprint_type_mismatch": "error",
+        "hole_clearance": "error",
+        "hole_near_hole": "error",
+        "invalid_outline": "error",
+        "isolated_copper": "warning",
+        "item_on_disabled_layer": "error",
+        "items_not_allowed": "error",
+        "length_out_of_range": "error",
+        "lib_footprint_issues": "error",
+        "lib_footprint_mismatch": "error",
+        "malformed_courtyard": "error",
+        "microvia_drill_out_of_range": "error",
+        "missing_courtyard": "ignore",
+        "missing_footprint": "warning",
+        "net_conflict": "warning",
+        "npth_inside_courtyard": "ignore",
+        "padstack": "error",
+        "pth_inside_courtyard": "ignore",
+        "shorting_items": "error",
+        "silk_edge_clearance": "warning",
+        "silk_over_copper": "ignore",
+        "silk_overlap": "ignore",
+        "skew_out_of_range": "error",
+        "solder_mask_bridge": "error",
+        "starved_thermal": "error",
+        "text_height": "warning",
+        "text_thickness": "warning",
+        "through_hole_pad_without_hole": "error",
+        "too_many_vias": "error",
+        "track_dangling": "warning",
+        "track_width": "error",
+        "tracks_crossing": "error",
+        "unconnected_items": "error",
+        "unresolved_variable": "error",
+        "via_dangling": "warning",
+        "zones_intersect": "ignore"
+      },
+      "rules": {
+        "allow_blind_buried_vias": false,
+        "allow_microvias": false,
+        "max_error": 0.005,
+        "min_clearance": 0.09999999999999999,
+        "min_connection": 0.0,
+        "min_copper_edge_clearance": 0.3,
+        "min_hole_clearance": 0.19999999999999998,
+        "min_hole_to_hole": 0.25,
+        "min_microvia_diameter": 0.19999999999999998,
+        "min_microvia_drill": 0.09999999999999999,
+        "min_resolved_spokes": 1,
+        "min_silk_clearance": 0.0,
+        "min_text_height": 0.7999999999999999,
+        "min_text_thickness": 0.12,
+        "min_through_hole_diameter": 0.19999999999999998,
+        "min_track_width": 0.09999999999999999,
+        "min_via_annular_width": 0.09999999999999999,
+        "min_via_diameter": 0.44999999999999996,
+        "solder_mask_to_copper_clearance": 0.0,
+        "use_height_for_length_calcs": true
+      },
+      "teardrop_options": [
+        {
+          "td_allow_use_two_tracks": true,
+          "td_curve_segcount": 5,
+          "td_on_pad_in_zone": false,
+          "td_onpadsmd": false,
+          "td_onroundshapesonly": false,
+          "td_ontrackend": false,
+          "td_onviapad": true
+        }
+      ],
+      "teardrop_parameters": [
+        {
+          "td_curve_segcount": 5,
+          "td_height_ratio": 0.7,
+          "td_length_ratio": 0.5,
+          "td_maxheight": 2.0,
+          "td_maxlen": 1.0,
+          "td_target_name": "td_round_shape",
+          "td_width_to_size_filter_ratio": 0.9
+        },
+        {
+          "td_curve_segcount": 5,
+          "td_height_ratio": 0.6,
+          "td_length_ratio": 0.5,
+          "td_maxheight": 2.0,
+          "td_maxlen": 1.0,
+          "td_target_name": "td_rect_shape",
+          "td_width_to_size_filter_ratio": 0.4
+        },
+        {
+          "td_curve_segcount": 5,
+          "td_height_ratio": 1.0,
+          "td_length_ratio": 0.5,
+          "td_maxheight": 2.0,
+          "td_maxlen": 1.0,
+          "td_target_name": "td_track_end",
+          "td_width_to_size_filter_ratio": 0.9
+        }
+      ],
+      "track_widths": [
+        0.0,
+        0.1,
+        0.125,
+        0.18,
+        0.3,
+        0.45
+      ],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        },
+        {
+          "diameter": 0.45,
+          "drill": 0.2
+        },
+        {
+          "diameter": 0.8,
+          "drill": 0.3
+        }
+      ],
+      "zones_allow_external_fillets": false,
+      "zones_use_no_outline": true
+    },
+    "ipc2581": {
+      "dist": "",
+      "distpn": "",
+      "internal_id": "",
+      "mfg": "",
+      "mpn": ""
+    },
+    "layer_presets": [],
+    "viewports": []
+  },
+  "boards": [],
+  "cvpcb": {
+    "equivalence_files": []
+  },
+  "erc": {
+    "erc_exclusions": [],
+    "meta": {
+      "version": 0
+    },
+    "pin_map": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        1,
+        2,
+        0,
+        0,
+        1,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    ],
+    "rule_severities": {
+      "bus_definition_conflict": "error",
+      "bus_entry_needed": "error",
+      "bus_to_bus_conflict": "error",
+      "bus_to_net_conflict": "error",
+      "conflicting_netclasses": "error",
+      "different_unit_footprint": "error",
+      "different_unit_net": "error",
+      "duplicate_reference": "error",
+      "duplicate_sheet_names": "error",
+      "endpoint_off_grid": "warning",
+      "extra_units": "error",
+      "global_label_dangling": "error",
+      "hier_label_mismatch": "error",
+      "label_dangling": "error",
+      "lib_symbol_issues": "warning",
+      "missing_bidi_pin": "warning",
+      "missing_input_pin": "warning",
+      "missing_power_pin": "error",
+      "missing_unit": "warning",
+      "multiple_net_names": "error",
+      "net_not_bus_member": "error",
+      "no_connect_connected": "error",
+      "no_connect_dangling": "error",
+      "pin_not_connected": "error",
+      "pin_not_driven": "error",
+      "pin_to_pin": "error",
+      "power_pin_not_driven": "error",
+      "similar_labels": "error",
+      "simulation_model_issue": "error",
+      "unannotated": "error",
+      "unit_value_mismatch": "error",
+      "unresolved_variable": "error",
+      "wire_dangling": "error"
+    }
+  },
+  "libraries": {
+    "pinned_footprint_libs": [
+      "PS2_footprints"
+    ],
+    "pinned_symbol_libs": [
+      "PS2_schematic_symbols",
+      "PS2_Resistors",
+      "PS2_Capacitors",
+      "PS2_Inductors"
+    ]
+  },
+  "meta": {
+    "filename": "PS2_79004_Rev_0_4.kicad_pro",
+    "version": 1
+  },
+  "net_settings": {
+    "classes": [
+      {
+        "bus_width": 6,
+        "clearance": 0.1,
+        "diff_pair_gap": 0.2,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.125,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Default",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.1,
+        "via_diameter": 0.6,
+        "via_drill": 0.2,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 6,
+        "clearance": 0.125,
+        "diff_pair_gap": 0.2,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.125,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "ETH",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.125,
+        "via_diameter": 0.45,
+        "via_drill": 0.2,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 6,
+        "clearance": 0.125,
+        "diff_pair_gap": 0.2,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.125,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "USB_CC",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.125,
+        "via_diameter": 0.45,
+        "via_drill": 0.2,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 6,
+        "clearance": 0.15,
+        "diff_pair_gap": 0.15,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.15,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "USB_PS2",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.15,
+        "via_diameter": 0.45,
+        "via_drill": 0.2,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 6,
+        "clearance": 0.125,
+        "diff_pair_gap": 0.2,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.125,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "USB_SYS",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.125,
+        "via_diameter": 0.45,
+        "via_drill": 0.2,
+        "wire_width": 6
+      }
+    ],
+    "meta": {
+      "version": 3
+    },
+    "net_colors": {
+      "/Battery Management/VBUS": "rgb(132, 0, 0)",
+      "/Battery Management/VSYS": "rgb(255, 0, 0)",
+      "1V2_T20": "rgb(194, 0, 194)",
+      "1V8_PS2": "rgb(194, 194, 0)",
+      "1V8_T20": "rgb(255, 255, 0)",
+      "1V_PS2": "rgb(132, 0, 132)",
+      "2V5_PS2": "rgb(0, 0, 255)",
+      "3V3_PS2": "rgb(0, 194, 0)",
+      "3V3_SBY": "rgb(0, 132, 0)",
+      "3V3_T20": "rgb(0, 194, 0)",
+      "5V": "rgb(255, 153, 0)",
+      "GND": "rgb(0, 194, 194)",
+      "GND1": "rgb(0, 132, 132)"
+    },
+    "netclass_assignments": null,
+    "netclass_patterns": [
+      {
+        "netclass": "USB_PS2",
+        "pattern": "/Connectors/USB1_DN"
+      },
+      {
+        "netclass": "USB_PS2",
+        "pattern": "/Connectors/USB1_DP"
+      },
+      {
+        "netclass": "ETH",
+        "pattern": "/Connectors/RD+"
+      },
+      {
+        "netclass": "ETH",
+        "pattern": "/Connectors/RD-"
+      },
+      {
+        "netclass": "ETH",
+        "pattern": "/Connectors/TD+"
+      },
+      {
+        "netclass": "ETH",
+        "pattern": "/Connectors/TD-"
+      },
+      {
+        "netclass": "USB_SYS",
+        "pattern": "/System Controller/USB_IN_DN"
+      },
+      {
+        "netclass": "USB_SYS",
+        "pattern": "/System Controller/USB_IN_DP"
+      },
+      {
+        "netclass": "USB_CC",
+        "pattern": "/USB C PD Controller/CC1"
+      },
+      {
+        "netclass": "USB_CC",
+        "pattern": "/USB C PD Controller/CC2"
+      },
+      {
+        "netclass": "USB_PS2",
+        "pattern": "/Connectors/USB2_DP"
+      },
+      {
+        "netclass": "USB_PS2",
+        "pattern": "/Connectors/USB2_DN"
+      }
+    ]
+  },
+  "pcbnew": {
+    "last_paths": {
+      "gencad": "",
+      "idf": "",
+      "netlist": "",
+      "plot": "",
+      "pos_files": "",
+      "specctra_dsn": "",
+      "step": "../../Solidworks/Mainboard/PS2_concept_9.STEP",
+      "svg": "",
+      "vrml": ""
+    },
+    "page_layout_descr_file": "Template/Temp_Rev_General_A4.kicad_wks"
+  },
+  "schematic": {
+    "annotate_start_num": 0,
+    "bom_fmt_presets": [],
+    "bom_fmt_settings": {
+      "field_delimiter": ",",
+      "keep_line_breaks": false,
+      "keep_tabs": false,
+      "name": "CSV",
+      "ref_delimiter": ",",
+      "ref_range_delimiter": "",
+      "string_delimiter": "\""
+    },
+    "bom_presets": [],
+    "bom_settings": {
+      "exclude_dnp": false,
+      "fields_ordered": [
+        {
+          "group_by": false,
+          "label": "Reference",
+          "name": "Reference",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "Value",
+          "name": "Value",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Datasheet",
+          "name": "Datasheet",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Footprint",
+          "name": "Footprint",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Qty",
+          "name": "${QUANTITY}",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "DNP",
+          "name": "${DNP}",
+          "show": true
+        }
+      ],
+      "filter_string": "",
+      "group_symbols": true,
+      "name": "Grouped By Value",
+      "sort_asc": true,
+      "sort_field": "Reference"
+    },
+    "connection_grid_size": 50.0,
+    "drawing": {
+      "dashed_lines_dash_length_ratio": 12.0,
+      "dashed_lines_gap_length_ratio": 3.0,
+      "default_bus_thickness": 12.0,
+      "default_junction_size": 40.0,
+      "default_line_thickness": 6.0,
+      "default_text_size": 50.0,
+      "default_wire_thickness": 6.0,
+      "field_names": [],
+      "intersheets_ref_own_page": false,
+      "intersheets_ref_prefix": "",
+      "intersheets_ref_short": false,
+      "intersheets_ref_show": false,
+      "intersheets_ref_suffix": "",
+      "junction_size_choice": 3,
+      "label_size_ratio": 0.3,
+      "operating_point_overlay_i_precision": 3,
+      "operating_point_overlay_i_range": "~A",
+      "operating_point_overlay_v_precision": 3,
+      "operating_point_overlay_v_range": "~V",
+      "overbar_offset_ratio": 1.23,
+      "pin_symbol_size": 25.0,
+      "text_offset_ratio": 0.3
+    },
+    "legacy_lib_dir": "",
+    "legacy_lib_list": [],
+    "meta": {
+      "version": 1
+    },
+    "net_format_name": "",
+    "ngspice": {
+      "fix_include_paths": true,
+      "fix_passive_vals": false,
+      "meta": {
+        "version": 0
+      },
+      "model_mode": 0,
+      "workbook_filename": ""
+    },
+    "page_layout_descr_file": "Template\\Temp_Rev_General_A3.kicad_wks",
+    "plot_directory": "Export/",
+    "spice_adjust_passive_values": false,
+    "spice_current_sheet_as_root": false,
+    "spice_external_command": "spice \"%I\"",
+    "spice_model_current_sheet_as_root": true,
+    "spice_save_all_currents": false,
+    "spice_save_all_dissipations": false,
+    "spice_save_all_voltages": false,
+    "subpart_first_id": 65,
+    "subpart_id_separator": 0
+  },
+  "sheets": [
+    [
+      "ef7f18b1-232d-4422-a55e-2e909421cb01",
+      ""
+    ],
+    [
+      "613472c1-cdc7-42c6-a30b-f61e723c07bf",
+      "USB C PD Controller"
+    ],
+    [
+      "c55821db-6586-412b-b698-9d2e25c9ceda",
+      "Battery Management"
+    ],
+    [
+      "015725f4-498f-43d1-a83b-c8551976dd18",
+      "Soft Power Switch"
+    ],
+    [
+      "b9b98afe-ad60-4dbd-9319-7f4955645a2e",
+      "Power Rails"
+    ],
+    [
+      "e4d5c334-e202-44d2-917c-d8a69a9bceb9",
+      "System Controller"
+    ],
+    [
+      "7e8a440e-a2ae-4a7a-b4e1-7ba582481294",
+      "PlayStation 2 - MAIN"
+    ],
+    [
+      "760ad148-715d-488b-a0e4-919c4e1e3877",
+      "Master-Clock"
+    ],
+    [
+      "568b5072-aae1-4ad6-9e2a-0f7482e04969",
+      "Emotion Engine Power"
+    ],
+    [
+      "2ace2169-be35-4e6b-b69e-4241aacd43a7",
+      "EE Front IO"
+    ],
+    [
+      "582376e0-d3e8-4ac4-98cb-a7d8de6505b1",
+      "Audio & Network"
+    ],
+    [
+      "845b9f6c-b302-43c0-a26e-1f8c097d05f7",
+      "Graphics"
+    ],
+    [
+      "22ffa7e0-d097-4d29-ab89-a0827b8009aa",
+      "Mechacon & DSP"
+    ],
+    [
+      "4362534b-f84c-447c-bcc8-bcfb9e9f61b9",
+      "Mechacon Power"
+    ],
+    [
+      "ed04ad01-ae0d-4cf5-bf5e-e3487da76a7a",
+      "Mechacon"
+    ],
+    [
+      "5980a306-5132-4e72-aa40-343cc1f936c6",
+      "Temperature"
+    ],
+    [
+      "74b833ae-c5dd-495f-89b9-d03fd557e9a7",
+      "BIOS"
+    ],
+    [
+      "5eea3767-5149-4938-a130-080db3273b63",
+      "DSP Power"
+    ],
+    [
+      "20149b04-cb00-4f15-afb3-59e9f0642129",
+      "DSP"
+    ],
+    [
+      "7ab58229-9e9d-4431-bb95-20c4d21d24c4",
+      "Network"
+    ],
+    [
+      "b2128274-36e0-47ec-8ed3-6a5fa09cd067",
+      "Audio"
+    ],
+    [
+      "f827d5e8-d4e9-48a8-8945-549b2c192183",
+      "Graphics S. Power"
+    ],
+    [
+      "72018739-ff20-43e6-9c9c-e03ef1a807b8",
+      "GS"
+    ],
+    [
+      "c35d9850-9372-44cd-995a-0704a7743dc5",
+      "Front IO"
+    ],
+    [
+      "5394b35f-26e1-430c-981c-76c6f1782897",
+      "Video Processor"
+    ],
+    [
+      "72b30591-a2e4-4773-82cf-3464f3ac7ecf",
+      "Trion T20 Power"
+    ],
+    [
+      "c600343d-1bbb-416e-9c57-00cec98adb5a",
+      "Trion T20 Control"
+    ],
+    [
+      "fbc02c21-566e-40fb-876e-b2f17779f4fb",
+      "Trion T20 SDRAM"
+    ],
+    [
+      "2b8ada3a-a75c-4756-8cab-c2cb8c1abb1d",
+      "Trion T20 InputOutput"
+    ],
+    [
+      "5d620bed-9f6b-408b-8a5e-994256f166d8",
+      "Connectors"
+    ]
+  ],
+  "text_variables": {
+    "CHANGE1": "Initial Draft - PS2 circuits only",
+    "CHANGE2": "Add SysCon, Power/Battery Management and Video Processor",
+    "CHANGE3": "Fix soft power switch; optimize BOM & component placement; Redo power routing;",
+    "CHANGE4": "Enlarge pads of gamepad connectors for easier soldering; add R616",
+    "CHANGE5": "",
+    "CHANGE6": "",
+    "CHANGE7": "",
+    "EFFDATE1": "25. Jan. 2023",
+    "EFFDATE2": "02. Oct. 2024",
+    "EFFDATE3": "03. Aug. 2025",
+    "EFFDATE4": "19. Oct. 2025",
+    "EFFDATE5": "",
+    "EFFDATE6": "",
+    "EFFDATE7": "",
+    "ORIGINATOR1": "P. Haid",
+    "ORIGINATOR2": "P. Haid",
+    "ORIGINATOR3": "P. Haid",
+    "ORIGINATOR4": "P. Haid",
+    "ORIGINATOR5": "",
+    "ORIGINATOR6": "",
+    "ORIGINATOR7": "",
+    "REV1": "0.1",
+    "REV2": "0.2",
+    "REV3": "0.3",
+    "REV4": "0.4",
+    "REV5": "",
+    "REV6": "",
+    "REV7": ""
+  }
+}

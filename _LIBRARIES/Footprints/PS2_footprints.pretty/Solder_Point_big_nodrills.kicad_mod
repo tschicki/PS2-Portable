@@ -1,0 +1,13 @@
+(footprint "Solder_Point_big_nodrills" (version 20221018) (generator pcbnew)
+  (layer "F.Cu")
+  (attr smd)
+  (fp_text reference "REF**" (at 0 -2.5 unlocked) (layer "F.SilkS") hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 648ea125-61ef-4bb2-8707-40e891a6104b)
+  )
+  (fp_text value "Solder_Point_big_1" (at 0 1 unlocked) (layer "F.Fab")
+      (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 07952d46-deff-4cc0-8bd8-21762652252b)
+  )
+  (pad "1" smd roundrect (at 0 0 90) (size 2 3) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25) (tstamp fbdee8bc-7f4c-4f6d-95cd-f8614125c73f))
+)

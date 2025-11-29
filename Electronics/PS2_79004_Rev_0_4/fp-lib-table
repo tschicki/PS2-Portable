@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "PS2_footprints")(type "KiCad")(uri "${KIPRJMOD}/PS2_footprints.pretty")(options "")(descr "")(disabled))
+)

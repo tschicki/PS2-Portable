@@ -1,0 +1,25 @@
+(version 1)
+
+(rule "eth clearance"
+    (constraint clearance (min 0.3mm))
+    (condition "A.NetClass == 'ETH' && B.Type == 'Zone'"))
+
+(rule "ps2 usb clearance"
+    (constraint clearance (min 0.3mm))
+    (condition "A.NetClass == 'USB_PS2' && B.Type == 'Zone'"))
+
+(rule "sys usb clearance in2"
+    (constraint clearance (min 0.5mm))
+    (condition "A.NetClass == 'USB_SYS' && B.Type == 'Zone' && B.Layer == 'Inner2.Cu'"))
+
+(rule "cc clearance in2"
+    (constraint clearance (min 0.5mm))
+    (condition "A.NetClass == 'USB_CC' && B.Type == 'Zone' && B.Layer == 'Inner2.Cu'"))
+
+(rule "pour clearance in2"
+    (constraint clearance (min 0.2mm))
+    (condition "A.Type == 'Zone' && B.Type == 'Zone' && B.Layer == 'Inner2.Cu'"))
+
+(rule "pour clearance in3"
+    (constraint clearance (min 0.2mm))
+    (condition "A.Type == 'Zone' && B.Type == 'Zone' && B.Layer == 'Inner3.Cu'"))

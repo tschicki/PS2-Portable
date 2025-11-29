@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "PS2_schematic_symbols")(type "KiCad")(uri "${PS2_LIB}/Schematic/PS2_schematic_symbols.kicad_sym")(options "")(descr "")(disabled)(hidden))
+)

@@ -1,0 +1,21 @@
+startup:
+
+-initialize IO
+-latch power switch to stay on
+-check power button status
+    -if pressed start timer
+    -at every timer interval, check power button; increment counter if pressed, decrement if unpressed
+    -if counter > param at end end of timer, set boot flag 
+-load charger config
+-enable charger adc
+-get battery fault status
+-get charger fault status
+-check charger attach status
+    -if attached init charging
+    -get input current limit
+    -check for battery present
+    -set input current limit
+    -enable charging
+    -check that charging started (status? current measurement?)
+    -set timer to poll charge status
+ 

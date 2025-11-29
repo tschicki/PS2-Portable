@@ -1,0 +1,18 @@
+
+# Executables
+*.exe
+
+#Electronics
+*-backups/
+
+#Syncthing
+.*
+!.gitignore
+
+#temp stuff
+~*
+
+#FPGA
+!SysCon Firmware/SysCon_FW/ps2_video_processor/outflow
+SysCon Firmware/SysCon_FW/ps2_video_processor/outflow/*
+!SysCon Firmware/SysCon_FW/ps2_video_processor/outflow/*.bit

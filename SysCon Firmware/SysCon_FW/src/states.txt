@@ -1,0 +1,97 @@
+
+system state machine:
+
+press and hold power button:
+    
+-INIT
+    -force the system on
+    -load stored settings from flash
+        -last volume
+        -last brightness
+        -last video processor settings?
+        -analog stick calibration
+        -whatever else there might be...
+    -init BQ25792
+    -init MAx17320
+
+-RECALL
+    -load previous settings from flash
+
+-WAIT_USER
+    -if power button was pressed, continue...
+
+-BOOT
+    -enable power rails
+    -initialize core1
+        -initialize gamepad
+        -initialize LM49450 and set defaut volume
+    -load T20 bitstream
+    -initialize video processor
+    -boot PS2 via RESET
+
+-RUN
+    (PS2 is running)
+    -core0:
+        -set timer to monitor BQ and MAx
+            -update battery display
+            -check for errors -> which errors/how to handle?
+            -maybe this should be used for both operation and charge state machines
+        -power button interrupt
+            -if pressed, proceed with shutdown
+        -if there is an OSD, handle that
+
+    -core1:
+        -run gamepad emulator
+        -control volume
+        -update power LED
+
+-SHUTDOWN
+    -shutdown PS2; if it takes too long, force it
+
+-BACKUP
+    -store all modified parametrs to flash
+
+-OFF
+    -release SYS FORCE ON
+    -in case the system is charging, go to state RECALL
+    -stop polling timer
+
+-RUN_ERROR
+    (error state for op state machine)
+    ultimate handle sould alays be OFF
+    are there error where retry makes more sense?
+
+--------------------------------------------------------------------
+charge state machine:
+
+-GET_POWER_STATUS
+    -should only happen after system init INIT
+    -check regularly whether a charger was plugged
+
+-CHARGE_INIT
+    -init STUSB
+    -get input current limit
+    -set BQ charge current
+    -update BQ configs for monitoring
+    -set charge enable LOW to start charging
+
+-CHARGE
+    -monitor BQ flags for charge information regularly
+    -check for errors -> which errors/how to handle?
+    
+    -battery health setting:
+        -stop charging at 80%
+        -> 80% equals FULL; charge enable = HIGH
+        -start charging <75%; charge enable = LOW
+    
+    -check attach status regularly for charge disconnection
+        -enter GET_POWER_STATUS state if disconnected
+
+-CHARGE_ERROR
+    (error state for charging state machine)   
+    100% disable charging
+    some situations may make sense to repeat (e.g. failed communication)
+    fault flags should abort charging
+    
+
+

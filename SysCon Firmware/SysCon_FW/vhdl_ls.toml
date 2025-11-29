@@ -1,0 +1,10 @@
+# File names are either absolute or relative to the parent folder of the
+# vhdl_ls.toml file and supports glob-style patterns.
+
+[libraries]
+
+# Defines library lib2
+scaler_types.files = [
+  'ps2_video_processor/source/*.vhd',
+]
+
