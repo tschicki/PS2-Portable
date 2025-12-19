@@ -160,7 +160,6 @@ void MX_GPIO_Init(struct SysCon_Pins *io)
   /*write the pin configs to the gpio registers*/
   init_gpio_configs(io);
 
-  return;
 }
 
 static void init_gpio_struct(struct SysCon_Pins *io)

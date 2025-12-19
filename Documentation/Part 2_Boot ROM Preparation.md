@@ -9,7 +9,9 @@ For the Boot ROM you have two options:
 Since the SD2PSX offers a very easy and attractive way to softmod the PS2, a boot rom modification is not strictly required. However, your choice here will mandate how you have to set up the BOOT Memory Card of your SD2PSX. If you go for option 1, you need to set up the Memory Card just like you would set it up for a stock console. For option 2 on the other hand, you will only need to provide the PS2BBL config file and an .ELF of the hombrew launcher of your choice (NHDDL recommended) on the BOOT Memory Card. The fastest and easiest way for sure is option 1: to flash a stock boot rom and DVD rom onto the 64Mbit NOR flash. For advanced users, option 2 is still listed.
 
 ## Option 1: Stock Boot ROM
-1. Obtain a SCPH-7900x BIOS of your console's region. Make sure to also dump/obtain the matching DVD ROM. 
+1. Obtain a SCPH-7900x BIOS of your donor console's region. Make sure to also dump/obtain the matching DVD ROM. 
+    - (preferred) You can dump both from the donor console using PS2Ident. 
+    - Otherwise you can find a matching v2.20 Boot ROM and v3.11 DVD ROM of the donor's region online.
 2. Ensure in PCSX2 that the Boot ROM is functional. 
 3. Then you will need to merge Boot and DVD ROM together. 
     - To do that, use the python script 'merge_boot_upper_dvd_lower_with_padding.py' in the *Boot ROM* directory

@@ -92,6 +92,7 @@ struct fpga_dev
     uint32_t video_config[NO_RESOLUTIONS][NO_VIDEO_SETTINGS]; //[NO_RESOLUTIONS][NO_VIDEO_SETTINGS];
     uint8_t scale;
     uint16_t current_resolution;
+    uint8_t magh_autodetect_enable;
     uint16_t current_spritebuffer_addr;
 
 };
@@ -126,6 +127,7 @@ syscon_error_t fpga_set_motion_threshold(struct fpga_dev *fpga_dev, struct SysCo
 syscon_error_t fpga_set_brightness(struct fpga_dev *fpga_dev, struct SysCon_Pins *io, uint8_t direction);
 syscon_error_t fpga_set_xy_resolution(struct fpga_dev *fpga_dev, struct SysCon_Pins *io, uint8_t direction, uint8_t axis);
 syscon_error_t fpga_set_sampling_divider(struct fpga_dev *fpga_dev, struct SysCon_Pins *io, uint8_t direction);
+syscon_error_t fpga_magh_autocorrect(struct fpga_dev *fpga_dev, struct SysCon_Pins *io);
 
 
 

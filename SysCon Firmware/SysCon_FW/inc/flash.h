@@ -129,6 +129,9 @@
 /*rumble*/
 #define RUMBLE_INTENSITY_DEF        3  /*can be 1 - 10*/
 
+/*MAGH Autodetect*/
+#define MAGH_AUTODETECT_SET         1
+
 
 #define MAX_SETTING_COUNT           1024 /*16 pages per sector of 4064 and 64 settings per page (32 bit): 64*16 = 1024*/
 
@@ -246,6 +249,7 @@ typedef enum flash_settings_e
     NO_TARGET_RES_Y_240p,
     
     NO_RUMBLE_INTENSITY,
+    NO_MAGH_AUTODETECT,
 
     SETTINGS_COUNT,
 } flash_settings_t;

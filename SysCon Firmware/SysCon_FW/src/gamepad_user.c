@@ -133,7 +133,6 @@ static void gamepad_user_process_stick_data(struct axis *axis_x, struct axis *ax
     axis_x->processed_stick_data = gamepad_user_map_axis(axis_x->scaled_stick_data, axis_x->min, axis_x->max, 0, 255, axis_x->invert_direction);
     axis_y->processed_stick_data = gamepad_user_map_axis(axis_y->scaled_stick_data, axis_y->min, axis_y->max, 0, 255, axis_y->invert_direction);
 
-    return;
 }
 
 static uint8_t gamepad_user_map_axis(uint16_t axis, uint16_t in_min, uint16_t in_max, uint8_t out_min, uint8_t out_max, uint8_t invert)
@@ -347,7 +346,6 @@ void inc_dec_deadzone(struct gamepad_user *gp_dev, uint8_t inc_dec)
     gp_dev->analog_stick[GP_LEFT].axes[0].deadzone = (uint16_t)deadzone;
     gp_dev->analog_stick[GP_LEFT].axes[1].deadzone = (uint16_t)deadzone;
 
-    return;
 }
 
 void analog_emulation_toggle(struct gamepad_user *gp_dev)
@@ -355,7 +353,6 @@ void analog_emulation_toggle(struct gamepad_user *gp_dev)
     if(gp_dev->ps1_analog_en == 0) gp_dev->ps1_analog_en = 1;
     else gp_dev->ps1_analog_en = 0;
 
-    return;
 }
 
 void run_analog_emulation(struct gamepad_user *gp_dev)
@@ -379,8 +376,6 @@ void run_analog_emulation(struct gamepad_user *gp_dev)
         digital_states = digital_states & ~((uint32_t)1<<BUTTON_UP);
 
     gp_dev->current_digital_states = digital_states;
-
-    return;
 
 }
 

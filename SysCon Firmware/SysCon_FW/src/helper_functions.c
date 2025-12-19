@@ -18,6 +18,4 @@ void inc_dec_setting(uint32_t *setting, uint8_t direction, uint8_t amount, uint3
 
     *setting = setting_temp;
 
-    return;
-
 }

@@ -48,6 +48,7 @@ entity video_setting_ram is
         B_i_video_res :       in integer range 0 to 128;
         B_o_video_en :        out std_logic;
         B_o_config_override : out std_logic;
+        B_i_magh_det :        in std_logic_vector(3 downto 0);
         B_i_version_major :   in integer range 0 to 127;
         B_i_version_minor :   in integer range 0 to 127
         
@@ -97,6 +98,7 @@ architecture Behavioral of video_setting_ram is
     signal o_data_config_r : std_logic_vector(7 downto 0) := (others=>'0');
     signal config_override_cdc, config_override : std_logic := '0';
     signal resolution_cdc : integer range 0 to 128 := 0;
+    signal magh_det_cdc : std_logic_vector(7 downto 0) := (others=>'0');
     signal video_enable_cdc, video_enable : std_logic := '0';
     
 begin
@@ -127,11 +129,13 @@ begin
     if(rising_edge(i_clk0)) then
         --CDC for the resolution
         resolution_cdc <= B_i_video_res;
+        magh_det_cdc <= "0000" & B_i_magh_det;
     
         case(config_state) is
             when state_wait =>
                 --wait for cs high
                 register_array(REG_RESOLUTION_INFO) <= std_logic_vector(to_unsigned(resolution_cdc, 8));
+                register_array(REG_MAGH_INFO) <= magh_det_cdc;
                 register_array(REG_VERSION_MAJOR) <= std_logic_vector(to_unsigned(B_i_version_major, 8));
                 register_array(REG_VERSION_MINOR) <= std_logic_vector(to_unsigned(B_i_version_minor, 8));
                 we_ram <= '0';

@@ -41,8 +41,6 @@ void run_fan_control(struct fan_dev *fan_dev)
   // Set channel A output high for one cycle before dropping
   pwm_set_chan_level(PWM_SLICE_NUM_28, PWM_CHAN_A, low_count);
   fan_dev->ee_temperature = temperature;
-
-  return;
 }
 
 float calculate_ee_temp(uint16_t voltage)
@@ -77,7 +75,6 @@ void fan_calculate_constants(struct fan_dev *fan_dev)
 {
   fan_dev->fan_k = (float)((PWM_WRAP_COUNT-(PWM_WRAP_COUNT/10))/(fan_dev->fan_high_temp - fan_dev->fan_low_temp));
   fan_dev->fan_d = (float)(PWM_WRAP_COUNT - (fan_dev->fan_k * fan_dev->fan_high_temp));
-  return;
 }
 
 void update_fan_curve(uint8_t *temp, uint8_t direction)
@@ -86,5 +83,4 @@ void update_fan_curve(uint8_t *temp, uint8_t direction)
     /*handle incrementing/decrementing based on the direction*/
     inc_dec_setting(&temperature, direction, 1, 99, 0);
     *temp = (uint8_t)temperature;
-    return;
 }

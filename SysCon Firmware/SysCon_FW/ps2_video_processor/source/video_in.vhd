@@ -52,29 +52,24 @@ entity video_sample is
         --registers
         o_video_res :         out integer range 0 to 128;
         i_video_en :          in std_logic;
-        i_config_override :   in std_logic
+        i_config_override :   in std_logic;
+        o_magh_det :          out std_logic_vector (3 downto 0) --detection of the subpixel count per pixel; updated every frame; non-zero values are valid
     );
 end video_sample;
 
 architecture Behavioral of video_sample is
-    component efx_simple_dual_port_2_clk_ram is
-  generic (
-    RAM_WIDTH : integer := 8;
-    RAM_DEPTH : integer := 128;
-    OUTREG    : boolean := true
-    );
-  port (
-    addra  : in  std_logic_vector((logb2(RAM_DEPTH)-1) downto 0);
-    addrb  : in  std_logic_vector((logb2(RAM_DEPTH)-1) downto 0);
-    dina   : in  std_logic_vector(RAM_WIDTH-1 downto 0);
-    clka   : in  std_logic;
-    clkb   : in  std_logic;
-    wea    : in  std_logic;
-    enb    : in  std_logic;
-    rstb   : in  std_logic;
-    regceb : in  std_logic;
-    doutb  : out std_logic_vector(RAM_WIDTH-1 downto 0));
-end component efx_simple_dual_port_2_clk_ram;
+    component MAGH_detector is
+        Port ( 
+            i_rst_n :           in std_logic;                         --reset input from PS2
+            i_clk :             in std_logic;                         --PS2 pixel clock input
+            i_data :            in STD_LOGIC_VECTOR (23 downto 0);    --parallel RGB video from PS2
+            
+            i_h_active :        in std_logic;                         --horizontal active
+            i_v_active :        in std_logic;                         --vertical active
+            o_magh_det :        out std_logic_vector (3 downto 0)     --detected MAGH value
+            
+        );
+    end component;
 
     
     signal input_res : integer range 0 to 128 := 32;
@@ -173,14 +168,25 @@ end component efx_simple_dual_port_2_clk_ram;
     signal config_override : std_logic := '0';
     signal resolution_cdc : integer range 0 to 127 := 0;
     signal video_enable : std_logic := '0';
+    signal master_reset : std_logic := '1';
     
 begin
+    master_reset <= i_rst_n and video_enable;
+    
+    magh_detect: MAGH_detector port map(  
+        i_rst_n => master_reset,
+        i_clk => i_clk,
+        i_data => i_data,
+        
+        i_h_active => h_active,
+        i_v_active => v_active,
+        o_magh_det => o_magh_det
+        );
 
-
-    h_v_flags:process(i_clk, i_rst_n)
+    h_v_flags:process(i_clk, master_reset)
     begin
     
-    if(i_rst_n = '0') then
+    if(master_reset = '0') then
         vsync_1 <= '1';
         vsync_2 <= '1';
         hsync_1 <= '1';
@@ -213,10 +219,10 @@ begin
     end if;
     end process;
 
-    h_counters:process(i_clk, i_rst_n)
+    h_counters:process(i_clk, master_reset)
     begin
     
-    if(i_rst_n = '0') then
+    if(master_reset = '0') then
         pixel_counter <= 0;
         h_active <= '0';
     else
@@ -245,10 +251,10 @@ begin
     active <= '1' when (v_active = '1' and h_active = '1') else
               '0';
 
-    fsm:process(i_clk, input_res, i_rst_n)
+    fsm:process(i_clk, input_res, master_reset)
     begin
     
-        if(i_rst_n = '0') then
+        if(master_reset = '0') then
             line_counter <= 0;
             max_lines <= 0;
             v_active <= '0';
@@ -264,7 +270,7 @@ begin
                         --set default signal levels
                         state_queue <= state_init;
 
-                        if(vsync_rising = '1' and video_enable = '1') then
+                        if(vsync_rising = '1') then
                             state <= state_frame_start;
                         elsif(hsync_falling = '1') then
                             state <= state_line_start;
@@ -379,10 +385,10 @@ begin
     end if;
     end process;
     
-    data_sampling:process(i_clk, i_rst_n)
+    data_sampling:process(i_clk, master_reset)
     begin
 
-    if(i_rst_n = '0') then
+    if(master_reset = '0') then
             line_active <= '0';
             packed_pxl_ctr <= 0;
             sampler <= 0;

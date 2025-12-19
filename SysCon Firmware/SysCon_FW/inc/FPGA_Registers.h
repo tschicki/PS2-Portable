@@ -36,11 +36,13 @@
 /*control registers for the video input*/
 /*this register returns the currently displayed resolution*/
 #define REG_RESOLUTION_INFO             RANGE_VIDEO_REGS + 0
+/*this register returns the determined MAGH value*/
+#define REG_MAGH_INFO                   RANGE_VIDEO_REGS + 1
 /*this one contains the video_enable flag and config_override flag*/
-#define REG_VIDEO_CONTROL               RANGE_VIDEO_REGS + 1
+#define REG_VIDEO_CONTROL               RANGE_VIDEO_REGS + 2
 /*gateware version*/
-#define REG_VERSION_MAJOR               RANGE_VIDEO_REGS + 2
-#define REG_VERSION_MINOR               RANGE_VIDEO_REGS + 3
+#define REG_VERSION_MAJOR               RANGE_VIDEO_REGS + 3
+#define REG_VERSION_MINOR               RANGE_VIDEO_REGS + 4
 /*registers for changing the display brightness*/
 #define REG_BRIGHTNESS_MAX_COUNT        RANGE_BRIGHTNESS + 0
 #define REG_BRIGHTNESS_TRIG_COUNT       RANGE_BRIGHTNESS + 1

@@ -224,7 +224,6 @@ static void STUSB_EnterWriteMode(struct STUSB4500_Dev *STUSB_Dev, uint8_t Erased
         i2c_read(STUSB_Dev->interface, STUSB4500_SLAVE_ADDRESS, FTP_CTRL_0, Buffer, 1); /* Wait for execution */
     } while (Buffer[0] & FTP_CUST_REQ);
 
-    return;
 }
 
 static void STUSB_WriteSector(struct STUSB4500_Dev *STUSB_Dev, char SectorNum, unsigned char *SectorData)
@@ -260,7 +259,6 @@ static void STUSB_WriteSector(struct STUSB4500_Dev *STUSB_Dev, char SectorNum, u
         i2c_read(STUSB_Dev->interface, STUSB4500_SLAVE_ADDRESS, FTP_CTRL_0, Buffer, 1); /* Wait for execution */
     } while (Buffer[0] & FTP_CUST_REQ);                                                 // FTP_CUST_REQ clear by NVM controller
 
-    return;
 }
 
 static void STUSB_ExitTestMode(struct STUSB4500_Dev *STUSB_Dev)
@@ -273,7 +271,6 @@ static void STUSB_ExitTestMode(struct STUSB4500_Dev *STUSB_Dev)
     Buffer[0] = 0x00;
     i2c_write(STUSB_Dev->interface, STUSB4500_SLAVE_ADDRESS, FTP_CUST_PASSWORD_REG, Buffer, 1); /* Clear Password */
 
-    return;
 }
 
 syscon_error_t STUSB_getID(struct STUSB4500_Dev *STUSB_Dev)

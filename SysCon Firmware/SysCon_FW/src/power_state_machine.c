@@ -321,6 +321,7 @@ syscon_state_t run_state_load_settings(struct power_dev *power_dev)
     power_dev->fan_dev.fan_high_temp = power_dev->settings[NO_FAN_TEMP_HIGH];
 
     power_dev->gp_dev.rumble_intensity = power_dev->settings[NO_RUMBLE_INTENSITY];
+    power_dev->menu_dev.fpga_dev.magh_autodetect_enable = power_dev->settings[NO_MAGH_AUTODETECT];
     power_dev->gp_dev.rumble_en = 1;
     power_dev->store_settings_flag = 0;
 

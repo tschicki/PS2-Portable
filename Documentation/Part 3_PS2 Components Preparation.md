@@ -36,8 +36,8 @@ The below tools act mainly as a suggestion, you can of course use everything tha
 -	Soldering iron with a high heat capacity tip (for solder wick)
 -	Thermometer, ideally with 2 thermocouples rated min. 300°C
 -	Vacuum pickup tool (not absolutely needed, but very handy)
--	Reballing fixture for 90x90mm stencils
--	Custom EE, GS and Mechacon stencils, see hardware files
+-	Reballing fixture for 90x90mm stencils - the common rose-gold ones work well
+-	Custom EE, GS and Mechacon stencils, see the tools section in [Part 1](https://github.com/tschicki/PS2-Portable/blob/main/Documentation/Part%201_Mechanical%20Components%20Preparation.md)
 -	A microscope, up to 45x magnification
 -	All the usual stuff: tweezers, scalpel, Kapton tape, …
 

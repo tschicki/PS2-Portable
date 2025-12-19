@@ -33,8 +33,8 @@
 
 
 /*set the firmware version here*/
-#define FW_VERSION_MAJOR    0
-#define FW_VERSION_MINOR    1
+#define FW_VERSION_MAJOR    1
+#define FW_VERSION_MINOR    0
 /*Debug print for various functions*/
 //#define BQ_DEBUG      /*will enable UART debug print for the BQ25792*/
 //#define MAX_DEBUG     /*will enable UART debug print for the MAX17320*/

@@ -101,6 +101,9 @@ void run_button_polling(struct power_dev *power_dev)
   gamepad_user_read_buttons(&power_dev->gp_dev);
   gamepad_user_set_rumble(&power_dev->gp_dev, motor_right_pwm, motor_left_pwm);
 
+  if(power_dev->menu_dev.fpga_dev.magh_autodetect_enable == 1)
+    fpga_magh_autocorrect(&power_dev->menu_dev.fpga_dev, &power_dev->io);
+
   if(power_dev->cur_run_state != STATE_CONFIG){
     digital_states = power_dev->gp_dev.current_digital_states;
     previous_digital_states = power_dev->gp_dev.previous_digital_states;

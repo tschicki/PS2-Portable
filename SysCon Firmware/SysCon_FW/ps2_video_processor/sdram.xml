@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<efx:project name="ps2_video_processor" description="" last_change="1762208129" sw_version="2024.1.163" last_run_state="pass" last_run_flow="bitstream" config_result_in_sync="true" design_ood="sync" place_ood="sync" route_ood="sync" xmlns:efx="http://www.efinixinc.com/enf_proj" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efinixinc.com/enf_proj enf_proj.xsd">
+<efx:project name="ps2_video_processor" description="" last_change="1765308704" sw_version="2024.1.163" last_run_state="pass" last_run_flow="bitstream" config_result_in_sync="true" design_ood="sync" place_ood="sync" route_ood="sync" xmlns:efx="http://www.efinixinc.com/enf_proj" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efinixinc.com/enf_proj enf_proj.xsd">
     <efx:device_info>
         <efx:family name="Trion"/>
         <efx:device name="T20F256"/>
@@ -31,6 +31,7 @@
         <efx:design_file name="source/Scaler_interpolate_step.vhd" version="default" library="default"/>
         <efx:design_file name="source/Hardware_multiplier.vhd" version="default" library="default"/>
         <efx:design_file name="libraries/scaler_package.vhd" version="default" library="default"/>
+        <efx:design_file name="source/MAGH_detector.vhd" version="default" library="default"/>
         <efx:top_vhdl_arch name=""/>
     </efx:design_info>
     <efx:constraint_info>

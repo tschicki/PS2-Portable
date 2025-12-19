@@ -45,7 +45,7 @@ The mainboard was designed from scratch and is based on the SCPH-7900x and SCPH-
     - Includes support for following resolutions:
         - 512i(256p) x 256, 512i(256p) x 320, 512i(256p) x 384, 512i(256p) x 448, 512i(256p) x 512, 512i(256p) x 640 at 50Hz
         - 448i(240p) x 256, 448i(240p) x 320, 448i(240p) x 384 at, 448i(240p) x 448, 448i(240p) x 512, 448i(240p) x 640 at 60Hz
-        - VESA 480x800 at 60Hz
+        - VESA 480x640 at 60Hz
 
 - Audio:
     - Custom I2S headphone and speaker amplifier using LM49450

@@ -7,6 +7,7 @@ static char entry_sp_volume_display[] = "SP Volume: 99";
 static char entry_video_settings[] = "Video Settings";
 static char entry_video_resolution[] = "Resolution Configs";
 static char entry_MAGH[] = "MAGH: 9";
+static char entry_MAGH_autodetect[] = "MAGH Autodetect: OFF";
 static char entry_video_position_x[] = "X Position: 999";
 static char entry_video_position_y[] = "Y Position: 999";
 static char entry_video_res_x_in[] = "Input Res X: 999";
@@ -16,7 +17,7 @@ static char entry_video_res_y_out[] = "Output Res Y: 999";
 static char entry_video_others[] = "Other Configs";
 static char entry_brightness_display[] = "Brightness: 100%%";
 static char entry_video_phase[] = "Horizontal Phase: 3";
-static char entry_deinterlacer_debug[] = "Deinterlacer Debug: 0";
+static char entry_deinterlacer_debug[] = "Deinterlacer Debug: OFF";
 static char entry_motion_thr[] = "Motion Threshold: 999";
 static char entry_resolution[] = "Current Resolution: 512i";
 static char entry_input_settings[] = "Input Settings";
@@ -31,8 +32,8 @@ static char entry_rumble_intensity[] = "Rumble Intensity: 10";
 static char entry_general[] = "General";
 static char entry_credits[] = "About";
 static char entry_credits_line1[] = "A Custom PS2 Portable";
-static char entry_credits_line2[] = "Designed and Manufactured";
-static char entry_credits_line3[] = "by Tschicki";
+static char entry_credits_line2[] = "Designed by Tschicki";
+static char entry_credits_line3[] = "2022 - 2025";
 static char entry_version[] = "VER: 0.0-0.0        ";
 static char entry_monitoring[] = "PM Monitoring";
 static char entry_power_display[] = "Battery Power: -99.9W";
@@ -88,6 +89,7 @@ void menu_fill_struct(struct menu_dev *menu_dev)
     entry_add(&menu_dev->menu[MENU_VIDEO_RES], entry_video_res_x_out, sizeof(entry_video_res_x_out), MENU_LINE_5_YPOS, MENU_OFFSET_X, NO_SKIP, MENU_MAIN, DO_NOTHING, GO_BACK, CURSOR_DOWN, CURSOR_UP, VIDEO_OUT_RES_X, VIDEO_OUT_RES_X);
     entry_add(&menu_dev->menu[MENU_VIDEO_RES], entry_video_res_y_out, sizeof(entry_video_res_y_out), MENU_LINE_6_YPOS, MENU_OFFSET_X, NO_SKIP, MENU_MAIN, DO_NOTHING, GO_BACK, CURSOR_DOWN, CURSOR_UP, VIDEO_OUT_RES_Y, VIDEO_OUT_RES_Y);
     entry_add(&menu_dev->menu[MENU_VIDEO_RES], entry_MAGH, sizeof(entry_MAGH), MENU_LINE_7_YPOS, MENU_OFFSET_X, NO_SKIP, MENU_MAIN, DO_NOTHING, GO_BACK, CURSOR_DOWN, CURSOR_UP, MAGH, MAGH);
+    
 
     /*video others menu*/
     menu_dev->menu[MENU_VIDEO_OTHER].gobackwhere = MENU_VIDEO;
@@ -96,6 +98,7 @@ void menu_fill_struct(struct menu_dev *menu_dev)
     entry_add(&menu_dev->menu[MENU_VIDEO_OTHER], entry_video_phase, sizeof(entry_video_phase), MENU_LINE_2_YPOS, MENU_OFFSET_X, NO_SKIP, MENU_MAIN, DO_NOTHING, GO_BACK, CURSOR_DOWN, CURSOR_UP, PHASE, PHASE);
     entry_add(&menu_dev->menu[MENU_VIDEO_OTHER], entry_deinterlacer_debug, sizeof(entry_deinterlacer_debug), MENU_LINE_3_YPOS, MENU_OFFSET_X, NO_SKIP, MENU_MAIN, DEINTERLACER_DBG_TOGGLE, GO_BACK, CURSOR_DOWN, CURSOR_UP, DO_NOTHING, DO_NOTHING);
     entry_add(&menu_dev->menu[MENU_VIDEO_OTHER], entry_motion_thr, sizeof(entry_motion_thr), MENU_LINE_4_YPOS, MENU_OFFSET_X, NO_SKIP, MENU_MAIN, DO_NOTHING, GO_BACK, CURSOR_DOWN, CURSOR_UP, MOTION_THR, MOTION_THR);
+    entry_add(&menu_dev->menu[MENU_VIDEO_OTHER], entry_MAGH_autodetect, sizeof(entry_MAGH_autodetect), MENU_LINE_5_YPOS, MENU_OFFSET_X, NO_SKIP, MENU_MAIN, MAGH_AUTO, GO_BACK, CURSOR_DOWN, CURSOR_UP, DO_NOTHING, DO_NOTHING);
 
     /*input menu*/
     menu_dev->menu[MENU_INPUT].gobackwhere = MENU_MAIN;
@@ -168,7 +171,6 @@ void entry_add(struct menu *menu, char *content, uint8_t size, uint16_t coords_l
 
 syscon_error_t menu_init(struct power_dev *power_dev)
 {
-    // menu_fill_struct(&power_dev->menu_dev);
     power_dev->menu_dev.next_menu = MENU_MAIN;
     power_dev->menu_dev.current_menu = MENU_MAIN;
     power_dev->menu_dev.previous_menu = MENU_MAIN;
@@ -187,7 +189,6 @@ syscon_error_t menu_init(struct power_dev *power_dev)
     sprintf(entry_video_position_x, "X Position: %3u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_H_IMAGE_OFFSET]);
     sprintf(entry_video_position_y, "Y Position: %3u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_V_IMAGE_OFFSET]);
     sprintf(entry_video_phase, "Horizontal Phase: %1u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_PHASE]);
-    sprintf(entry_deinterlacer_debug, "Deinterlacer Debug: %1u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_DEINTERLACER_DEBUG]);
     sprintf(entry_motion_thr, "Motion Threshold: %3u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_MOTION_THRESHOLD]);
 
     sprintf(entry_video_res_x_out, "Output Res X: %3u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_TARGET_RES_X]);
@@ -195,6 +196,22 @@ syscon_error_t menu_init(struct power_dev *power_dev)
     sprintf(entry_video_res_x_in, "Input Res X: %3u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_H_ACTIVE_PXL]);
     sprintf(entry_video_res_y_in, "Input Res Y: %3u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_V_IMAGE_ACTIVE]);
     sprintf(entry_MAGH, "MAGH: %1u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_SAMPLING_DIVIDER]);
+
+    if (power_dev->menu_dev.fpga_dev.magh_autodetect_enable == 1){
+        sprintf(entry_MAGH_autodetect, "MAGH Autodetect: ON ");
+    }
+    else{
+        sprintf(entry_MAGH_autodetect, "MAGH Autodetect: OFF");
+    }
+
+    if (power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_DEINTERLACER_DEBUG] == 1){
+        sprintf(entry_deinterlacer_debug, "Deinterlacer Debug: ON ");
+    }
+    else{
+        sprintf(entry_deinterlacer_debug, "Deinterlacer Debug: OFF");
+    }
+
+
     /*update the version string*/
     sprintf(entry_version, "VER: %03u.%03u-%03u.%03u", FW_VERSION_MAJOR, FW_VERSION_MINOR, power_dev->menu_dev.fpga_dev.version_major, power_dev->menu_dev.fpga_dev.version_minor);
 
@@ -399,7 +416,12 @@ syscon_error_t menu_run(struct power_dev *power_dev, uint16_t systick)
         break;
     case DEINTERLACER_DBG_TOGGLE:
         result = fpga_toggle_deinterlacer_debug(&power_dev->menu_dev.fpga_dev, &power_dev->io);
-        sprintf(entry_deinterlacer_debug, "Deinterlacer Debug: %1u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_DEINTERLACER_DEBUG]);
+        if (power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_DEINTERLACER_DEBUG] == 1){
+            sprintf(entry_deinterlacer_debug, "Deinterlacer Debug: ON ");
+        }
+        else{
+            sprintf(entry_deinterlacer_debug, "Deinterlacer Debug: OFF");
+        }
         break;
     case MOTION_THR:
         result = fpga_set_motion_threshold(&power_dev->menu_dev.fpga_dev, &power_dev->io, power_dev->menu_dev.action_button_state);
@@ -410,6 +432,18 @@ syscon_error_t menu_run(struct power_dev *power_dev, uint16_t systick)
         sprintf(entry_video_res_x_in, "Input Res X: %3u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_H_ACTIVE_PXL]);
         sprintf(entry_video_position_x, "X Position: %3u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_H_IMAGE_OFFSET]);
         sprintf(entry_MAGH, "MAGH: %1u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_SAMPLING_DIVIDER]);
+        break;
+    case MAGH_AUTO:
+        if(power_dev->menu_dev.fpga_dev.magh_autodetect_enable == 0)
+        {
+            power_dev->menu_dev.fpga_dev.magh_autodetect_enable = 1;
+            sprintf(entry_MAGH_autodetect, "MAGH Autodetect: ON ");
+        }
+        else
+        {
+            power_dev->menu_dev.fpga_dev.magh_autodetect_enable = 0;
+            sprintf(entry_MAGH_autodetect, "MAGH Autodetect: OFF");
+        }
         break;
     case JOYSTICK_SET_CENTER:
         center_analog_sticks(&power_dev->gp_dev);
@@ -472,6 +506,8 @@ syscon_error_t menu_store_settings(struct power_dev *power_dev, uint32_t *flash_
     flash_setting[NO_AX2_DEADZONE] = power_dev->gp_dev.analog_stick[GP_LEFT].axes[0].deadzone;
     flash_setting[NO_AX3_DEADZONE] = power_dev->gp_dev.analog_stick[GP_LEFT].axes[1].deadzone;
     flash_setting[NO_RUMBLE_INTENSITY] = power_dev->gp_dev.rumble_intensity;
+    flash_setting[NO_MAGH_AUTODETECT] = power_dev->menu_dev.fpga_dev.magh_autodetect_enable;
+    
     store_stick_calibration(&power_dev->gp_dev, flash_setting);
     if (fpga_copy_video_cfg(&power_dev->menu_dev.fpga_dev, flash_setting, RES_STORE) != ERROR_OK)
         return FPGA_COMMAND_FAILED;
@@ -550,13 +586,6 @@ void update_interactive_entries(struct power_dev *power_dev)
     float voltage = (power_dev->MAX_Dev.MAX_batt_properties.pack_voltage > 9.9) ? 9.9 : power_dev->MAX_Dev.MAX_batt_properties.pack_voltage;
     voltage = (power_dev->MAX_Dev.MAX_batt_properties.pack_voltage < 0.0) ? 0.0 : power_dev->MAX_Dev.MAX_batt_properties.pack_voltage;
 
-    //------------------------
-    // uint8_t test[2] = {0};
-    // uint16_t test16 = 0;
-    // MAX_get_regs(&power_dev->MAX_Dev, MAX_SLAVE_ADDRESS, REG10_FULLCAP, test, 2);
-    // test16 = ((uint16_t)test[1] << 8) | (uint16_t)test[0];
-    // sprintf(entry_pack_voltage, "Cap: %x", test16);
-    //------------------------
     /*writing the clipped emelents into the display buffers*/
     /*main menu entries*/
     sprintf(menu_main_soc, "SOC: %5.1f%%", soc);
@@ -579,6 +608,7 @@ void update_interactive_entries(struct power_dev *power_dev)
     sprintf(entry_power_display, "Battery Power: %5.1fW", power);
     sprintf(entry_pack_voltage, "Battery Voltage: %3.1fV", voltage);
 
+    /*resolution stuff*/
     switch (power_dev->menu_dev.fpga_dev.current_resolution)
     {
     case RES_512i:
@@ -599,6 +629,10 @@ void update_interactive_entries(struct power_dev *power_dev)
     default:
         break;
     }
+
+    sprintf(entry_video_res_x_in, "Input Res X: %3u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_H_ACTIVE_PXL]);
+    sprintf(entry_video_position_x, "X Position: %3u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_H_IMAGE_OFFSET]);
+    sprintf(entry_MAGH, "MAGH: %1u", power_dev->menu_dev.fpga_dev.video_config[power_dev->menu_dev.fpga_dev.current_resolution][NO_SAMPLING_DIVIDER]);
 }
 
 uint8_t menu_actions(struct menu_dev *menu_dev, uint16_t buttonstates, uint16_t prev_buttonstates)

@@ -242,10 +242,10 @@ If you don't order the part pre-tapped, you will need to tap M1.6 threads in fol
 - Supplier: JLCPCB
 - Type: 2-Layer flex
 - Thickness: 0.11mm
-- Stiffener: Polyimide 0.2mm
+- Stiffener: Polyimide 0.25mm
 - Copper: 1/3oz
 - Outline: Laser-cut
-- Gold Fingers -> YES (0.3mm total thickness)
+- Gold Fingers -> YES (0.3mm total thickness flex + stiffener)
 - [Gerber L1 L2](https://github.com/tschicki/PS2-Portable/tree/main/Electronics/PS2_Gamepad_Left/Flex_L1_L2/Gerber)
 - [Gerber R1 R2](https://github.com/tschicki/PS2-Portable/tree/main/Electronics/PS2_Gamepad_Right/Flex_R1_R2/Gerber)
 
@@ -260,6 +260,15 @@ If you don't order the part pre-tapped, you will need to tap M1.6 threads in fol
 
 
 ## Tools
+
+### Reballing Stencils
+The custom reballing stencils are supplied by JLCPCB. They are 90x90mm and fit the common rose-gold reballing fixtures. The cutouts are optimized for 0.55mm solder balls. 
+You can find the Gerbers [here](https://github.com/tschicki/PS2-Portable/tree/main/Electronics/PS2_Reballing_Stencils_Eval/Gerber). The files contain a panel outline too, so the panel can either have a 190x190mm custom size (cheaper shipping) or JLCs default 380x280mm stencil size.  
+For ordering add the following comments:
+
+- Please do not change the stencil aperture
+- Stencil thickness: 0.2mm
+- Engraving: Text and position, see file "engrave.gbr"
 
 ### Tool for M1.6 Brass Inserts
 A tool for M1.6 heat set inserts is very difficult to find, especially as a tip for soldering irons. I personally use the M2 adaper for Ersa soldering irons available from [CNCKitchen](https://cnckitchen.store/de/collections/soldering-tips-and-sets). To have the correct diameter and about 3mm length, I modified it using a drill, file and sandpaper.

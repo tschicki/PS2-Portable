@@ -100,8 +100,6 @@ void BQ_init_structs(struct BQ25792_Dev *BQ_Dev)
     BQ_Dev->BQ_ADC_Config.dm_adc_dis = ADC_FUNC_DISABLE;   // D- ADC DI
     BQ_Dev->BQ_ADC_Config.vac2_adc_dis = ADC_FUNC_DISABLE; // VAC2 ADC DI
     BQ_Dev->BQ_ADC_Config.vac1_adc_dis = ADC_FUNC_DISABLE; // VAC1 ADC DI
-
-    return;
 }
 
 syscon_error_t BQ_set_config(struct BQ25792_Dev *BQ_Dev)

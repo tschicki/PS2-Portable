@@ -158,7 +158,8 @@ architecture Behavioral of framebuffer is
         --registers
         o_video_res :         out integer range 0 to 128;
         i_video_en :          in std_logic;
-        i_config_override :   in std_logic
+        i_config_override :   in std_logic;
+        o_magh_det :          out std_logic_vector (3 downto 0) --detection of the subpixel count per pixel; updated every frame; non-zero values are valid
 		);
 	end component;
 
@@ -377,9 +378,9 @@ architecture Behavioral of framebuffer is
         B_i_video_res :       in integer range 0 to 128;
         B_o_video_en :        out std_logic;
         B_o_config_override : out std_logic;
+        B_i_magh_det :        in std_logic_vector(3 downto 0);
         B_i_version_major :   in integer range 0 to 127;
         B_i_version_minor :   in integer range 0 to 127
-        
         );
     end component;
     
@@ -468,13 +469,13 @@ end component;
     signal w_video_res : integer range 0 to 128;
     signal w_video_en : std_logic;
     signal w_config_override : std_logic;
-    
+    signal w_magh_det : std_logic_vector(3 downto 0);
     ---constants-----------------------
     constant RAM_WIDTH : integer := 24;
     constant RAM_DEPTH : integer := 801;
     constant OUTREG : boolean := true;
     -----------------------------------
-    constant VERSION_MAJOR : integer range 0 to 127:= 0;
+    constant VERSION_MAJOR : integer range 0 to 127:= 1;
     constant VERSION_MINOR : integer range 0 to 127 := 1;
 
 begin
@@ -543,8 +544,8 @@ begin
         --registers
         o_video_res =>w_video_res,
         i_video_en =>w_video_en,
-        i_config_override =>w_config_override
-      
+        i_config_override =>w_config_override,
+        o_magh_det =>w_magh_det
 	);
 
 video_settings : video_setting_ram
@@ -567,6 +568,7 @@ video_settings : video_setting_ram
         B_i_video_res =>w_video_res,
         B_o_video_en =>w_video_en,
         B_o_config_override =>w_config_override,
+        B_i_magh_det =>w_magh_det,
         B_i_version_major => VERSION_MAJOR,
         B_i_version_minor => VERSION_MINOR
 	);

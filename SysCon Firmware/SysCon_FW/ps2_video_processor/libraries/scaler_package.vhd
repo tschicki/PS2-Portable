@@ -76,10 +76,11 @@ constant RANGE_SPRITE_REG : std_logic_vector(3 downto 0) := "0101";
 constant RANGE_SPRITE_BUF : std_logic_vector(3 downto 0) := "0110";
 constant RANGE_SPRITE_RAM : std_logic_vector(3 downto 0) := "0111";
 --registers
-constant REG_RESOLUTION_INFO :      integer range 0 to 3 := 0;
-constant REG_CONFIG_OVERRIDE :      integer range 0 to 3 := 1;
-constant REG_VERSION_MAJOR :        integer range 0 to 3 := 2;
-constant REG_VERSION_MINOR :        integer range 0 to 3 := 3;
+constant REG_RESOLUTION_INFO :      integer := 0;
+constant REG_MAGH_INFO :            integer := 1;
+constant REG_CONFIG_OVERRIDE :      integer := 2;
+constant REG_VERSION_MAJOR :        integer := 3;
+constant REG_VERSION_MINOR :        integer := 4;
 --video setting register offsets  
 constant H_IMAGE_OFFSET_READ :      integer := 4;
 constant H_IMAGE_ACTIVE_READ :      integer := 6;

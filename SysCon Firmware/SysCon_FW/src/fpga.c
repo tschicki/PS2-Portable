@@ -14,6 +14,8 @@ uint8_t __in_flash() font8x8_basic[][8]= {
 const uint32_t bitstream_size = sizeof(bitstream);
 const uint16_t font_size = sizeof(font8x8_basic)/8;
 
+static uint32_t resolution_select[10] = {0,0,0,640,512,448,384,320,0,256};
+
 
 syscon_error_t fpga_init(struct fpga_dev *fpga_dev, struct SysCon_Pins *io)
 {
@@ -437,7 +439,7 @@ syscon_error_t fpga_set_xy_resolution(struct fpga_dev *fpga_dev, struct SysCon_P
 
 syscon_error_t fpga_set_sampling_divider(struct fpga_dev *fpga_dev, struct SysCon_Pins *io, uint8_t direction)
 {
-    uint32_t resolution_select[10] = {0,0,0,640,512,448,384,320,0,256}; /*possible horizontal resolutions based on the sampling divider*/
+    //uint32_t resolution_select[10] = {0,0,0,640,512,448,384,320,0,256}; /*possible horizontal resolutions based on the sampling divider*/
     uint8_t data_buffer[VIDEO_CONFIG_BUFFER_LENGTH] = {0};
     uint16_t resolution = 0;
 
@@ -448,15 +450,18 @@ syscon_error_t fpga_set_sampling_divider(struct fpga_dev *fpga_dev, struct SysCo
     /*set the sampling divider and the default horizontal resolution respectively*/
     /*this whole calculation only applies to NTSC/PAL video signals*/
     if(resolution != RES_480p){
-        inc_dec_setting(&fpga_dev->video_config[resolution][NO_SAMPLING_DIVIDER], direction, 1, 9, 3);
-        fpga_dev->video_config[resolution][NO_H_ACTIVE_PXL] = resolution_select[fpga_dev->video_config[resolution][NO_SAMPLING_DIVIDER]];
-        /*update the other horizontal parameters*/
-        fpga_calculate_x_params(fpga_dev, resolution, &fpga_dev->video_config[resolution][NO_H_IMAGE_ACTIVE], &fpga_dev->video_config[resolution][NO_H_PACKED_PXL], &fpga_dev->video_config[resolution][NO_H_IMAGE_OFFSET]);
-        /*update the scale...*/
-        fpga_calculate_scale(fpga_dev, resolution, &fpga_dev->video_config[resolution][NO_SCALING_X], &fpga_dev->video_config[resolution][NO_SCALING_Y]);
+        if(fpga_dev->magh_autodetect_enable != 1){
+            inc_dec_setting(&fpga_dev->video_config[resolution][NO_SAMPLING_DIVIDER], direction, 1, 9, 3);
+            fpga_dev->video_config[resolution][NO_H_ACTIVE_PXL] = resolution_select[fpga_dev->video_config[resolution][NO_SAMPLING_DIVIDER]];
+            /*update the other horizontal parameters*/
+            fpga_calculate_x_params(fpga_dev, resolution, &fpga_dev->video_config[resolution][NO_H_IMAGE_ACTIVE], &fpga_dev->video_config[resolution][NO_H_PACKED_PXL], &fpga_dev->video_config[resolution][NO_H_IMAGE_OFFSET]);
+            /*update the scale...*/
+            fpga_calculate_scale(fpga_dev, resolution, &fpga_dev->video_config[resolution][NO_SCALING_X], &fpga_dev->video_config[resolution][NO_SCALING_Y]);
 
-        if(fpga_reload_video_cfg(fpga_dev, io, resolution, fpga_dev->video_config[resolution]) != ERROR_OK)
-        return FPGA_COMMAND_FAILED;
+            if(fpga_reload_video_cfg(fpga_dev, io, resolution, fpga_dev->video_config[resolution]) != ERROR_OK)
+            return FPGA_COMMAND_FAILED;
+        }
+        
     }
     else{
         /*480p only supports 640 pixels in x, so we shouldn't update the divider or the resolution*/
@@ -636,7 +641,6 @@ static void fpga_fill_cfg_buffer(uint8_t *data_buffer, uint32_t *video_config)
     data_buffer[OFFSET_TARGET_RES_Y_LSB] =      (uint8_t)(video_config[NO_TARGET_RES_Y]);
     data_buffer[OFFSET_TARGET_RES_Y_MSB] =      (uint8_t)(video_config[NO_TARGET_RES_Y] >> 8);
 
-    return;
 }
 
 static void fpga_calculate_scale(struct fpga_dev *fpga_dev, uint16_t resolution_to_modify, uint32_t *scale_x_out, uint32_t *scale_y_out)
@@ -704,4 +708,62 @@ syscon_error_t fpga_get_version(struct fpga_dev *fpga_dev, struct SysCon_Pins *i
     *version_minor = minor;
 
     return ERROR_OK;
+}
+
+
+syscon_error_t fpga_magh_autocorrect(struct fpga_dev *fpga_dev, struct SysCon_Pins *io)
+{
+    //uint32_t resolution_select[10] = {0,0,0,640,512,448,384,320,0,256}; /*possible horizontal resolutions based on the sampling divider*/
+    uint8_t data_buffer[VIDEO_CONFIG_BUFFER_LENGTH] = {0};
+    uint16_t resolution = 0;
+    uint8_t magh_value = 0;
+
+    /*first we need to read the video resolution to change the right settings*/
+    if(fpga_get_current_resolution(fpga_dev, io, &resolution) != ERROR_OK)
+        return FPGA_COMMAND_FAILED;
+
+    /*read the detected MAGH value from the FPGA*/
+    if(fpga_read_address(fpga_dev, io, REG_MAGH_INFO, &magh_value) != ERROR_OK)
+        return FPGA_COMMAND_FAILED;
+
+    /*free horizontal 2x integer scaling for 240x320p content*/
+    if(magh_value == 7) magh_value = 3;
+
+    if((resolution != RES_480p) && (magh_value != 0))
+    {
+        /*magh is not applicable to 480p*/
+        if(magh_value != fpga_dev->video_config[resolution][NO_SAMPLING_DIVIDER])
+        {
+            /*in order to avoid image artefacts, we disable the video output before reloading the settings; this puts most of the video processor into reset*/
+            if(fpga_video_endi(fpga_dev, io, DISABLE) != ERROR_OK)
+                return FPGA_COMMAND_FAILED;
+
+            /*store the magh value and update the sampling divider of the respective resolution*/
+            //fpga_dev->magh_autodetect_value = magh_value;
+            fpga_dev->video_config[resolution][NO_SAMPLING_DIVIDER] = magh_value;
+
+            /*new magh value detected, so adjust settings*/
+            fpga_dev->video_config[resolution][NO_H_ACTIVE_PXL] = resolution_select[fpga_dev->video_config[resolution][NO_SAMPLING_DIVIDER]];
+            /*update the other horizontal parameters*/
+            fpga_calculate_x_params(fpga_dev, resolution, &fpga_dev->video_config[resolution][NO_H_IMAGE_ACTIVE], &fpga_dev->video_config[resolution][NO_H_PACKED_PXL], &fpga_dev->video_config[resolution][NO_H_IMAGE_OFFSET]);
+            /*update the scale...*/
+            fpga_calculate_scale(fpga_dev, resolution, &fpga_dev->video_config[resolution][NO_SCALING_X], &fpga_dev->video_config[resolution][NO_SCALING_Y]);
+
+            if(fpga_reload_video_cfg(fpga_dev, io, resolution, fpga_dev->video_config[resolution]) != ERROR_OK)
+                return FPGA_COMMAND_FAILED;
+            /*don't forget to re-enable video output, otherwise no image is displayed!*/
+            if(fpga_video_endi(fpga_dev, io, ENABLE) != ERROR_OK)
+                return FPGA_COMMAND_FAILED;
+        }
+        else
+        {
+            /*magh unchanged, nothing to do*/
+        }   
+    }
+    else{
+        /*480p only supports 640 pixels in x, so we shouldn't update the divider or the resolution*/
+        /*if the returned MAGH value is 0, no valid value was detected -> don't do anything*/
+    }
+
+   return ERROR_OK;
 }

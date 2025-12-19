@@ -6,9 +6,9 @@ This part of the assembly documentation will give you a couple of hints when it 
 - Long-presss the PlayStation button to turn off the portable. Turning off has a couple of seconds delay, so no worries if the system doesn't shut down right away!
 
 ## Charging and Discharging
-> As with Li-Ion powered devices:
+> As with all Li-Ion powered devices:
 > - Don't leave the system unattended while charging!  
-> - Only charge at room temperature!
+> - Don't charge or use in hot environments! Room temperature recommended.
 > - Don't use unnecessarily long USB cables for charging!
 
 The portable supports USB-C PD charging with the following profiles:
@@ -61,22 +61,23 @@ Selected items are blue, deselected items are white.
 - **Other Configs**: Change brightnesss, motion threshold, phase and other settings.
 - **Current Resolution**: Displays the resolution your PS2 is currently outputting, for information only
 
-The video settings are mirrored 5 times. There is a set of settings for 512i, 448i, 256p, 240p and 480p. Each set can be changed independently of the others and is only applied when that specific resolution is displayed. Note that you always change the set of settings for the resolution that is shown in 'Current Resolution'.
+The video settings are mirrored 5 times. There is a set of settings for the vertical resolutions 512i, 448i, 256p, 240p and 480p. Each set can be changed independently of the others and is only applied when that specific vertical resolution is displayed. Note that you always change the set of settings for the resolution that is shown in 'Current Resolution' (i.e. currently displayed).
 
 #### Resolution Configs Menu
 - **X Position**: Move the image left and right
 - **Y Position**: Move the image up and down
 - **Input Res X**: Change the active horizontal input resolution
 - **Input Res Y**: Change the active vertical input resolution
-- **Output Res X**: Change the horizontal bilinear scaler target resolution
+- **Output Res X**: Change the horizontal bilinear scaler target resolution. To obtain 4:3 aspect ratio: set to 640 for NTSC, ~600 for PAL
 - **Output Res Y**: Change the vertical bilinear scaler target resolution
-- **MAGH**: Change the horizontal magnification and input resolution; If you notice that your game has vertical lines, try changing this value
+- **MAGH**: Change the horizontal magnification and input resolution; If you notice that your game has vertical lines, try changing this value. Cannot be changed if 'MAGH Autodetect' is enabled
 
 #### Other Configs Menu
 - **Brightness**: Change display brightness from 0 to 100%
 - **Horizontal Phase** : Configure in which clock cycle a pixel shall be sampled; this usually does nothing, but sometimes it can remove blurriness
 - **Deinterlacer Debug** : When enabled, all pixels where motion is detected will be colored pink. This only works for interlaced inputs. Useful for tweaking the Motion Threshold.
 - **Motion Threshold** : Sets the threshold for when the motion adaptive deinterlacer detects motion. Lower values will favor bob deinterlacing (more blurry and wobbly), higher values favor weave deinterlacing (more combing artefacts). Only applies to interlaced inputs.
+- **MAGH Autodetect** : When enabled the system will try to automatically adjust the image settings according to the currently displayed horizontal resolution (640, 512, 384, 320,...). It's recommended to keep this enabled by default. 
 
 ### Input Settings Menu
 - **Analog Stick Calibration**: Use this to configure the center point and min/max of both analog sticks. Launch the function and follow the instructions.

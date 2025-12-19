@@ -56,6 +56,7 @@
 #define MENU_LINE_5_YPOS            MENU_LINE_4_YPOS + 18
 #define MENU_LINE_6_YPOS            MENU_LINE_5_YPOS + 18
 #define MENU_LINE_7_YPOS            MENU_LINE_6_YPOS + 18
+#define MENU_LINE_8_YPOS            MENU_LINE_7_YPOS + 18
 
 #define DEG_SIGN                    UINT8_C(176)
 
@@ -177,6 +178,7 @@ typedef enum fpga_interaction_e
     VIDEO_OUT_RES_X,
     VIDEO_OUT_RES_Y,
     MAGH,
+    MAGH_AUTO,
     /*analog stick*/
     JOYSTICK_INVERT,
     MENU_STORE_SETTINGS,

@@ -115,6 +115,8 @@ static uint32_t flash_settings[] = {
     TARGET_RES_Y_240p,
     /*rumble*/
     RUMBLE_INTENSITY_DEF,
+    /*MAGH*/
+    MAGH_AUTODETECT_SET,
 };
 
 void flash_init(uint32_t **settings, const uint16_t numEntries, const uint8_t *flash_target_contents, uint32_t magic_number)
