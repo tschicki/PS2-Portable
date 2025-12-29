@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Patrick Haid
 -- 
 -- Create Date: 26.11.2025 20:11:05
 -- Design Name: PS2 Video Processor

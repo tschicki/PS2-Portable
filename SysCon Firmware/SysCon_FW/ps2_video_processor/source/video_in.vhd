@@ -128,7 +128,7 @@ architecture Behavioral of video_sample is
 
     signal vsync_rising, hsync_falling : std_logic := '0';
     signal reset_req_reg : std_logic := '0';
-    signal sampling_divider, sampler : integer range 0 to 4 := 0;
+    signal sampling_divider, sampler : integer range 0 to 9 := 0;
     
     signal h_image_offset : std_logic_vector(15 downto 0) := (others=>'0');
     signal v_image_offset : std_logic_vector(7 downto 0) := (others=>'0');

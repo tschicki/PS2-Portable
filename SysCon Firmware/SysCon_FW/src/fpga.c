@@ -452,6 +452,14 @@ syscon_error_t fpga_set_sampling_divider(struct fpga_dev *fpga_dev, struct SysCo
     if(resolution != RES_480p){
         if(fpga_dev->magh_autodetect_enable != 1){
             inc_dec_setting(&fpga_dev->video_config[resolution][NO_SAMPLING_DIVIDER], direction, 1, 9, 3);
+
+            /*in this edge case we skip MAGH 8; according to the GS user manual this setting is not defined - and will also only lead to a black screen as I did not define a resolution_select entry for this case*/
+            if(fpga_dev->video_config[resolution][NO_SAMPLING_DIVIDER] == 8)
+            {
+                if(direction == ACTION_RIGHT) fpga_dev->video_config[resolution][NO_SAMPLING_DIVIDER] = 9;
+                else fpga_dev->video_config[resolution][NO_SAMPLING_DIVIDER] = 7;
+            }
+
             fpga_dev->video_config[resolution][NO_H_ACTIVE_PXL] = resolution_select[fpga_dev->video_config[resolution][NO_SAMPLING_DIVIDER]];
             /*update the other horizontal parameters*/
             fpga_calculate_x_params(fpga_dev, resolution, &fpga_dev->video_config[resolution][NO_H_IMAGE_ACTIVE], &fpga_dev->video_config[resolution][NO_H_PACKED_PXL], &fpga_dev->video_config[resolution][NO_H_IMAGE_OFFSET]);
@@ -726,8 +734,11 @@ syscon_error_t fpga_magh_autocorrect(struct fpga_dev *fpga_dev, struct SysCon_Pi
     if(fpga_read_address(fpga_dev, io, REG_MAGH_INFO, &magh_value) != ERROR_OK)
         return FPGA_COMMAND_FAILED;
 
-    /*free horizontal 2x integer scaling for 240x320p content*/
+    /*edge case: free horizontal 2x integer scaling for 240x320p content*/
     if(magh_value == 7) magh_value = 3;
+
+    /*edge case: free horizontal 2x integer scaling for 240x256p content*/
+    if(magh_value == 9) magh_value = 4;
 
     if((resolution != RES_480p) && (magh_value != 0))
     {

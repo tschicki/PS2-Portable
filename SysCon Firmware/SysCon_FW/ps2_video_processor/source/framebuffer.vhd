@@ -476,7 +476,7 @@ end component;
     constant OUTREG : boolean := true;
     -----------------------------------
     constant VERSION_MAJOR : integer range 0 to 127:= 1;
-    constant VERSION_MINOR : integer range 0 to 127 := 1;
+    constant VERSION_MINOR : integer range 0 to 127 := 2;
 
 begin
 	resets : reset_module
