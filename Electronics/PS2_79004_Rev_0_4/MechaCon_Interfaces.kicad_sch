@@ -4121,7 +4121,7 @@
     (property "Datasheet" "~" (at 172.72 231.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Part Number" "NX3225GA-16.9344M-STD-CRG-2‎" (at 172.72 231.14 0)
+    (property "Part Number" "STDCRG2-16.9344M" (at 172.72 231.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 2f251e7b-42b0-4d67-aa0f-8ace11a03540))
