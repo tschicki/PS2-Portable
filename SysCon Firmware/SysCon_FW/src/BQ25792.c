@@ -32,11 +32,11 @@ void BQ_init_structs(struct BQ25792_Dev *BQ_Dev)
     BQ_Dev->BQ_Charge_Config.en_auto_ibatdis = 0x1; // auto discharge in OVP
     // BQ_Dev->BQ_Charge_Config.force_ibatdis=       0x0;    //no
     // BQ_Dev->BQ_Charge_Config.en_chg=              0x1;    //charge EN using EN pin
-    BQ_Dev->BQ_Charge_Config.en_ico = 0x0;    // disable
-    BQ_Dev->BQ_Charge_Config.force_ico = 0x0; // no
-    BQ_Dev->BQ_Charge_Config.en_hiz = 0x1;    // HiZ
-    BQ_Dev->BQ_Charge_Config.en_term = 0x1;   // enable termination
-    BQ_Dev->BQ_Charge_Config.vac_ovp = 0x0;   // 26V
+    BQ_Dev->BQ_Charge_Config.en_ico = 0x0;          // disable
+    BQ_Dev->BQ_Charge_Config.force_ico = 0x0;       // no
+    BQ_Dev->BQ_Charge_Config.en_hiz = 0x0;          // HiZ
+    BQ_Dev->BQ_Charge_Config.en_term = 0x1;         // enable termination
+    BQ_Dev->BQ_Charge_Config.vac_ovp = 0x0;         // 26V
     // BQ_Dev->BQ_Charge_Config.wd_rst=              0x0;    //no reset, is done separately
     BQ_Dev->BQ_Charge_Config.watchdog = 0x0; // watchdog disabled
     // BQ_Dev->BQ_Charge_Config.force_ident=         0x0;    //no

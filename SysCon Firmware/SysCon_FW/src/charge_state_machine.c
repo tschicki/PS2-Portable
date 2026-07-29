@@ -130,8 +130,7 @@ void run_charge_state_machine(struct power_dev *power_dev)
 
 syscon_state_t run_state_get_power_status(struct BQ25792_Dev *BQ_Dev)
 {
-
-    if ((BQ_Dev->BQ_CHGStatus.vbus_present_stat == 1) && (BQ_Dev->BQ_CHGStatus.vbat_present_stat == 1))
+    if ((BQ_Dev->BQ_CHGStatus.vbus_present_stat == 1))
         return STATE_CHARGE_INIT;
 
     return STATE_GET_POWER_STATUS;

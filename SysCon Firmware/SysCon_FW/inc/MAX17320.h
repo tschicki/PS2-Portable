@@ -116,7 +116,7 @@ struct MAX17320_Dev
 };
 
 syscon_error_t MAX_get_regs(struct MAX17320_Dev *MAX_Dev, uint8_t device_address, uint8_t start_address, uint8_t *rw_buffer, uint8_t no_of_regs);
-static syscon_error_t MAX_set_regs(struct MAX17320_Dev *MAX_Dev, uint8_t device_address, uint8_t start_address, uint8_t *rw_buffer, uint8_t no_of_regs);
+syscon_error_t MAX_set_regs(struct MAX17320_Dev *MAX_Dev, uint8_t device_address, uint8_t start_address, uint8_t *rw_buffer, uint8_t no_of_regs);
 syscon_error_t MAX_update_nvconfig(struct MAX17320_Dev *MAX_Dev);
 syscon_error_t MAX_write_nvconfig(struct MAX17320_Dev *MAX_Dev);
 static syscon_error_t MAX_get_remaining_write_cycles(struct MAX17320_Dev *MAX_Dev, uint8_t *remaining_cycles);
@@ -147,5 +147,6 @@ syscon_error_t MAX_get_chip_id(struct MAX17320_Dev *MAX_Dev);
 syscon_error_t MAX_enter_ship_mode(struct MAX17320_Dev *MAX_Dev);
 
 syscon_error_t MAX_dump_settings_uart(struct MAX17320_Dev *MAX_Dev);
+syscon_error_t MAX_dump_register_uart(struct MAX17320_Dev *MAX_Dev, uint8_t address, uint8_t register_addr);
 
 #endif

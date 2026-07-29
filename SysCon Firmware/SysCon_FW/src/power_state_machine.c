@@ -141,7 +141,7 @@ syscon_state_t run_state_init(struct power_dev *power_dev)
     possible registers to indicate: IOTG*/
     if (BQ_check_config_present(&power_dev->BQ_Dev) == BQ_CONFIG_MISMATCH)
     {
-        printf("UPDATING MAX CONFIG\n");
+        //printf("UPDATING MAX CONFIG\n");
         /*only needed if NVM was not flashed*/
         // if (MAX_update_nvconfig(&power_dev->MAX_Dev) != ERROR_OK)
         //     return STATE_SHUTDOWN;

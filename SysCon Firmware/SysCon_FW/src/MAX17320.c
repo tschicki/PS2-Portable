@@ -385,7 +385,7 @@ syscon_error_t MAX_get_regs(struct MAX17320_Dev *MAX_Dev, uint8_t device_address
     return result;
 }
 
-static syscon_error_t MAX_set_regs(struct MAX17320_Dev *MAX_Dev, uint8_t device_address, uint8_t start_address, uint8_t *rw_buffer, uint8_t no_of_regs)
+syscon_error_t MAX_set_regs(struct MAX17320_Dev *MAX_Dev, uint8_t device_address, uint8_t start_address, uint8_t *rw_buffer, uint8_t no_of_regs)
 {
     int8_t result = ERROR_OK;
 
@@ -411,6 +411,18 @@ syscon_error_t MAX_dump_settings_uart(struct MAX17320_Dev *MAX_Dev)
        printf("0x%04X\r\n", config);
    }
 
+}
+
+syscon_error_t MAX_dump_register_uart(struct MAX17320_Dev *MAX_Dev, uint8_t address, uint8_t register_addr)
+{
+   //debug only - dump MAX settings
+   static uint8_t rw_buffer[2] = {0};
+   if (MAX_get_regs(MAX_Dev, address, register_addr, rw_buffer, 2) != ERROR_OK)
+       return MAX_FAILED_TO_UPDATE_NVCONFIG;
+
+   uint16_t config = 0;
+   config = MAX_convert_to_word(rw_buffer[0], rw_buffer[1]);
+   printf("Reg 0x%02X: 0x%04X\r\n", register_addr, config);
 }
 
 
