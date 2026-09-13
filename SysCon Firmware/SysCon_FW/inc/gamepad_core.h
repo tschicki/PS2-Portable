@@ -89,14 +89,14 @@ struct ds2{
 
 
 /*internal functions*/
-static void ds2_protocol_handler(void);
-static void ds2_execute_command(struct ds2 *ds2_dev);
+static void __time_critical_func(ds2_protocol_handler)(void);
+static void __time_critical_func(ds2_execute_command)(struct ds2 *ds2_dev);
 static void ds2_init_protocol_struct(struct ds2 *ds2_dev);
 static void ds2_enable_small_motor(uint8_t value);
 static void ds2_enable_large_motor(uint8_t value);
-static void ds2_att_handler(uint gpio, uint32_t events);
-static void ds2_return_ack_timer(uint32_t delay_us);
-static void ds2_ack_alarm_irq(void);
+static void __time_critical_func(ds2_att_handler)(uint gpio, uint32_t events);
+static void __time_critical_func(ds2_return_ack_timer)(uint32_t delay_us);
+static void __time_critical_func(ds2_ack_alarm_irq)(void);
 
 void ds2_poll_inputs(struct ds2 *ds2_dev);
 void ds2_initialize(struct ds2 *ds2_dev);

@@ -56,7 +56,7 @@ static uint8_t response_polling_config[] = {
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*internal functions for handling the protocol*/
 /*main DS2 protocol handler; runs for every received byte*/
-static void ds2_protocol_handler(void)//void __not_in_flash_func (ds2_protocol_handler)(void)
+static void __time_critical_func(ds2_protocol_handler)(void)//void __not_in_flash_func (ds2_protocol_handler)(void)
 {
     pio_interrupt_clear(pio0, 0);
     //get received command
@@ -104,7 +104,7 @@ static void ds2_protocol_handler(void)//void __not_in_flash_func (ds2_protocol_h
     
 }
 /*find out what the gamepad needs to RETURN for each byte based on the command; fill the return buffer for the rest of the frame*/
-static void ds2_execute_command(struct ds2 *ds2_dev)//void __not_in_flash_func(ds2_execute_command)(struct ds2 *ds2_dev)
+static void __time_critical_func(ds2_execute_command)(struct ds2 *ds2_dev)//void __not_in_flash_func(ds2_execute_command)(struct ds2 *ds2_dev)
 {
 
     /*response length depending on gamepad mode*/
@@ -309,6 +309,7 @@ void ds2_initialize(struct ds2 *ds2_dev)
 {
 
     /*setup interrupt for ATT rising and falling edge detection*/
+    irq_set_priority(IO_IRQ_BANK0, 0x80);
     gpio_set_irq_enabled_with_callback(GAMEPAD_ATT_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &ds2_att_handler);
 
     /*all the PIO initialization*/
@@ -317,6 +318,7 @@ void ds2_initialize(struct ds2 *ds2_dev)
     pio_spi_init(pio0, gSpiSm, gSpiOffset, GAMEPAD_CMD_PIN, GAMEPAD_SCK_PIN, GAMEPAD_DATA_PIN);
     pio_set_irq0_source_enabled(pio0, pis_interrupt0, true);
     irq_set_exclusive_handler(PIO0_IRQ_0, ds2_protocol_handler);
+    irq_set_priority(PIO0_IRQ_0, 0x00);
     irq_set_enabled(PIO0_IRQ_0, true);
 
     /*init all variables for running the dualshock 2 emulation*/
@@ -343,7 +345,7 @@ void ds2_run_core1_gamepad(void)
     }
 }
 
-static void ds2_att_handler(uint gpio, uint32_t events)
+static void __time_critical_func(ds2_att_handler)(uint gpio, uint32_t events)
 {
     if ((gpio == GAMEPAD_ATT_PIN) && (events == GPIO_IRQ_EDGE_FALL))
     {
@@ -365,13 +367,13 @@ static void ds2_att_handler(uint gpio, uint32_t events)
     }
 }
 
-static void ds2_return_ack_timer(uint32_t delay_us)
+static void __time_critical_func(ds2_return_ack_timer)(uint32_t delay_us)
 {
     /*setup the interrupt and irq handler for the ACK pin*/
     hw_set_bits(&timer_hw->inte, 1u << ALARM_ACK);
     irq_set_exclusive_handler(ALARM_IRQ_ACK, ds2_ack_alarm_irq);
     /*try to prioritize the timer IRQ over the ATT IRQ to get more consistent ACK lengths*/
-    irq_set_priority(ALARM_IRQ_ACK, 0x7F);
+    irq_set_priority(ALARM_IRQ_ACK, 0x70);
     /*Enable the alarm irq*/
     irq_set_enabled(ALARM_IRQ_ACK, true);
     /*Alarm is only 32 bits!!!!*/
@@ -380,7 +382,7 @@ static void ds2_return_ack_timer(uint32_t delay_us)
     timer_hw->alarm[ALARM_ACK] = (uint32_t)target;
 }
 
-static void ds2_ack_alarm_irq(void)
+static void __time_critical_func(ds2_ack_alarm_irq)(void)
 {
     // Clear the alarm irq
     hw_clear_bits(&timer_hw->intr, 1u << ALARM_ACK);
