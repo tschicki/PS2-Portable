@@ -150,6 +150,7 @@ struct power_dev
     /*never reset explictly, only when resetting the mcu*/
     uint8_t power_status_known;
     uint8_t power_error_flag;
+    uint8_t power_error_ack;
     uint32_t *settings;
     uint8_t store_settings_flag;
 };

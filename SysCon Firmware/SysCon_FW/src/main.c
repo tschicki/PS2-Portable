@@ -33,6 +33,7 @@ int main(void)
   power_dev.last_chg_state = STATE_CHARGE_DEFAULT;
 
   power_dev.power_error_flag = 0;
+  power_dev.power_error_ack = 0;
 
   /*init GPIO*/
   MX_GPIO_Init(&power_dev.io);

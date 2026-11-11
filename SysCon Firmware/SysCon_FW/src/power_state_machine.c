@@ -10,8 +10,10 @@ uint32_t irq_status = 0;
 void run_power_state_machine(struct power_dev *power_dev)
 {
     /*in case an error happened in the power polling function, shut down*/
-    if (power_dev->power_error_flag == 1)
+    if (power_dev->power_error_flag == 1 && power_dev->power_error_ack == 0){
         power_dev->cur_run_state = syscon_state_str(STATE_RUN_ERROR, power_dev->cur_run_state);
+    }
+        
 
     switch (power_dev->cur_run_state)
     {
@@ -88,8 +90,10 @@ void run_power_state_machine(struct power_dev *power_dev)
         break;
 
     case STATE_RUN_ERROR:
-        /*not defined yet*/
-        power_dev->cur_run_state = syscon_state_str(STATE_OFF, power_dev->cur_run_state);
+        /*indicate that the error state was triggered*/
+        power_dev->power_error_ack = 1;
+        /*shutdown the system in case it hits an error*/
+        power_dev->cur_run_state = syscon_state_str(STATE_SHUTDOWN, power_dev->cur_run_state);
         break;
 
     default:
@@ -362,6 +366,11 @@ syscon_state_t run_state_off(struct power_dev *power_dev)
     endi_power_good_irq(&power_dev->io, DISABLE);
     stop_button_poll_timer();
     sys_set_pin(power_dev->io.pin[PIN_DCDC_EN], SYSPIN_LOW);
+
+    /*clear error flags when shutting down*/
+    power_dev->power_error_ack = 0;
+    power_dev->power_error_flag = 0;
+
     delay_ms(500);
     sys_set_pin(power_dev->io.pin[PIN_SYS_FORCE_ON], SYSPIN_LOW);
 
